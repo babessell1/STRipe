@@ -1,0 +1,5 @@
+OUT_DIR: "/home/bbessell/STRomboli/data/"
+DATA_DIR: "/home/bbessell/STRomboli/long_reads/"
+REF_FASTA: "tmep"
+CHROMOSOMES: "chr21"
+BEAGLE_JAR_PATH: "/home/bbessell/STRomboli/software/beagle.22Jul22.46e.jar"
