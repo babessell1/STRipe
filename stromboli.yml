@@ -178,7 +178,7 @@ dependencies:
     - rpds-py==0.7.1
     - setuptools==67.6.1
     - traitlets==5.9.0
-    - tricolor==1.1.0
+    - tricolor
     - urllib3==1.26.15
     - zipp==3.15.0
 prefix: /home/bbessell/software/mambaforge/envs/tricolor
