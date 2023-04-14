@@ -4,6 +4,8 @@ from warnings import warn
 from py.helpers import *
 configfile: "config.yaml"
 
+print(get_seqtype(os.path.join(config["OUT_DIR"], "sample_info_common.tsv")))
+
 rule_all = [
     expand(
         os.path.join(config["OUT_DIR"],
@@ -51,15 +53,14 @@ rule_all = [
 
 ]
 
-print(get_seqtype(os.path.join(config["OUT_DIR"], "sample_info_common.tsv")))
 
 rule all: input: rule_all
 
 
 rule tricolor:
     output: 
-        sensor = os.path.join(config["OUT_DIR"], "tricolor", "sensor", "{sid}_{seqtype}_sensor"),
-        refer = os.path.join(config["OUT_DIR"], "tricolor", "refer", "{sid}_{seqtype}_refer")
+        sensor = directory(os.path.join(config["OUT_DIR"], "tricolor", "sensor", "{sid}_{seqtype}_sensor")),
+        refer = directory(os.path.join(config["OUT_DIR"], "tricolor", "refer", "{sid}_{seqtype}_refer"))
     input:
         hp1 = os.path.join(config["DATA_DIR"], "{sid}.{seqtype}.h1.sorted.bam"),
         hp2 = os.path.join(config["DATA_DIR"], "{sid}.{seqtype}.h2.sorted.bam")
@@ -68,8 +69,8 @@ rule tricolor:
         ref_fasta = config["REF_FASTA"],
         sid = "{sid}",
         seqtype = "{seqtype}"
-    threads: 1
-    resources: mem_mb=2000
+    threads: 4
+    resources: mem_mb=30000
     log: "logs/tricolor_{sid}_{seqtype}.log"
     conda: "stromboli.yml"
     shell:
@@ -92,21 +93,22 @@ rule straglr:
         hp2 = os.path.join(config["OUT_DIR"], "straglr", "{sid}_{seqtype}_straglr", "{sid}_{seqtype}_hp2_straglr.tsv")
     params: 
         out_dir = os.path.join(config["OUT_DIR"], "straglr", "{sid}_{seqtype}_straglr"),
-        ref_fasta = config["REF_FASTA"]
-    threads: 1
-    resources: mem_mb=2000
+        ref_fasta = config["REF_FASTA"],
+        straglr_path = config["STRAGLR_PATH"]
+    threads: 32
+    resources: mem_mb=15000
     log: "logs/straglr.{sid}.{seqtype}.log"
-    conda: "stromboli.yml"
+    conda: "straglr.yml"
     shell:
         """
         mkdir -p {params.out_dir}/strglr_temp
-        python straglr.py \
+        python {params.straglr_path} \
             {input.hp1} \
             {params.ref_fasta} \
             "$(basename {input.hp1} .bam)" \
             --tmpdir {params.out_dir}/strglr_temp
         
-        python straglr.py \
+        python {params.straglr_path} \
             {input.hp2} \
             {params.ref_fasta} \
             "$(basename {input.hp2} .bam)" \
@@ -121,19 +123,22 @@ rule impute:
         common_samples = os.path.join(config["OUT_DIR"], "sample_info_common.tsv")
     output: os.path.join(config["OUT_DIR"], "imputed_TR_SNPs", "{chr}")
     params:
-        out_dir = os.path.join(config["OUT_DIR"], "straglr", "{chr}_straglr"),
+        out_dir = os.path.join(config["OUT_DIR"]),
         beagle_jar = config["BEAGLE_JAR_PATH"],
         chr = "{chr}"
 
-    threads: 4 
-    resources: mem_mb=8000
+    threads: 16 
+    resources: mem_mb=122000
     log: "logs/impute.{chr}.log"
     conda: "stromboli.yml"
     shell:
         """
         mkdir -p {params.out_dir}/imputed_TRs
-        java -Xmx8g -jar {params.beagle_jar} \
-            gt=$(bcftools view -S {input.common_samples} {input.snp})  \
+        mkdir -p {params.out_dir}/impute_tmp
+        cat {input.common_samples} | sed 's/|/ /' | awk '{{print $1}}' > {params.out_dir}/impute_tmp/{params.chr}.tmp 
+        java -Xmx122g -jar {params.beagle_jar} \
+            gt=$(bcftools view -S {params.out_dir}/impute_tmp/{params.chr}.tmp {input.snp})  \
             ref=$(bcftools view -S {input.common_samples} {input.tr_snp}) \
             out={output}
+        rm {params.out_dir}/impute_tmp/{params.chr}.tmp
         """

@@ -46,12 +46,13 @@ rule download_snps:
         tbi = os.path.join(config["SNP_DIR"], "1kGP_high_coverage_Illumina.{chr}.filtered.SNV_INDEL_SV_phased_panel.vcf.gz.tbi")
     params:
         chr = "{chr}",
+        snp_dir = config["SNP_DIR"]
     threads: 1
     resources: mem_mb=1000
     log: "logs/download.snp.{chr}.log"
     shell:
         """
-        mkdir -p {params.out_dir}/1kG_SNP
+        mkdir -p {params.snp_dir}/1kG_SNP
         wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20220422_3202_phased_SNV_INDEL_SV/1kGP_high_coverage_Illumina.{params.chr}.filtered.SNV_INDEL_SV_phased_panel.vcf.gz \
             -O {output.vcf}
         wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20220422_3202_phased_SNV_INDEL_SV/1kGP_high_coverage_Illumina.{params.chr}.filtered.SNV_INDEL_SV_phased_panel.vcf.gz.tbi \
