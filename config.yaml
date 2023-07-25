@@ -8,5 +8,5 @@ CHROMOSOMES: "chr21"
 BEAGLE_JAR_PATH: "/home/bbessell/STRomboli/software/beagle.22Jul22.46e.jar"
 STRAGLR_PATH: "/home/bbessell/STRomboli/software/straglr/straglr.py"
 IGNORE_SAMPLES: "HG00513, HG00514"
-VAMOS_PATH:
-EMOTIFS: 
+VAMOS_PATH: /home/bbessell/software/vamos-v1.2.0_x64-linux
+EMOTIFS: /home/bbessell/refs/vntr_region_motifs.e.bed
