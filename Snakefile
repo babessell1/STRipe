@@ -98,7 +98,7 @@ rule vamos:
         vamos = config["VAMOS_PATH"]
     threads: 8
     resources: mem_mb = 30000
-    conda: envs/vamos.yml
+    conda: "envs/vamos.yml"
     shell:
         """
         {params.vamos} --contig -b {input.hp1} -r {params.emotifs} -s {params.sid} -o {output.hp1} -t {threads}
