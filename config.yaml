@@ -1,5 +1,5 @@
 OUT_DIR: "/home/bbessell/STRomboli/results/"
-DATA_DIR: "/scratch/remills_root/remills99/bbessell/assemblies"
+DATA_DIR: "/scratch/remills_root/remills99/bbessell/assemblies/assemblies.alignment.1025"
 SNP_DIR: "/scratch/remills_root/remills99/bbessell/1kG_SNP_Panel/"
 SNP_TR_PANEL_DIR: "/scratch/remills_root/remills99/bbessell/EnsembleTR_SNP_TR_Panel/"
 REF_FASTA: "/scratch/remills_root/remills99/bbessell/genomes/GRCh38_latest_genomic.fna.gz"
