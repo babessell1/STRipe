@@ -92,18 +92,17 @@ rule vamos:
         hp2 = os.path.join(config["OUT_DIR"], "vamos", "{sid}_{seqtype}_vamos", "{sid}_{seqtype}_hp2.vcf")
     
     params:
-        data_dir = os.path.join(config["OUT_DIR"]),
-        ref_fasta = config["REF_FASTA"],
         sid = "{sid}",
         seqtype = "{seqtype}",
         emotifs = config["EMOTIFS"],
-
-    threads: 4 
+        vamos = config["VAMOS_PATH"]
+    threads: 8
     resources: mem_mb = 30000
+    conda: vamos.yml
     shell:
         """
-        vamos --contig -b {input.hp1} -r {params.emotifs} -s {params.sid} -o {output.hp1} -t {threads}
-        vamos --contig -b {input.hp2} -r {params.emotifs} -s {params.sid} -o {output.hp2} -t {threads}
+        {params.vamos} --contig -b {input.hp1} -r {params.emotifs} -s {params.sid} -o {output.hp1} -t {threads}
+        {params.vamos} --contig -b {input.hp2} -r {params.emotifs} -s {params.sid} -o {output.hp2} -t {threads}
         """
 
 
