@@ -97,7 +97,7 @@ rule vamos:
         emotifs = config["EMOTIFS"],
         vamos = config["VAMOS_PATH"]
     threads: 8
-    resources: mem_mb = 30000
+    resources: mem_mb = 4000
     conda: "envs/vamos.yml"
     shell:
         """
