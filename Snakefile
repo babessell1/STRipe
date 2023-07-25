@@ -101,7 +101,7 @@ rule vamos:
     conda: "envs/vamos.yml"
     shell:
         """
-        LD_LIBRARY_PATH=/home/bbessell/mambaforge/envs/vamos/lib {params.vamos} --contig -b {input.hp1} -r {params.emotifs} -s {params.sid} -o {output.hp1} -t {threads}
+        LD_LIBRARY_PATH=/home/bbessell/mambaforge/envs/vamos/lib {params.vamos} --contig -b {input.hp1} -r {params.emotifs} -s {params.sid} -o {output.hp1} -t {threads} &&
         LD_LIBRARY_PATH=/home/bbessell/mambaforge/envs/vamos/lib {params.vamos} --contig -b {input.hp2} -r {params.emotifs} -s {params.sid} -o {output.hp2} -t {threads}
         """
 
