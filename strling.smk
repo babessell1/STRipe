@@ -45,8 +45,7 @@ rule strling:
         sid = "{sid}",
         seqtype = "{seqtype}",
         strling = config["STRLING_PATH"],
-        ref_fasta = config["REF_FASTA"],
-        strling_ref = config["STRLING_REF"]
+        ref_fasta = config["REF_FASTA"]
     threads: 1
     resources: mem_mb = 4000
     shell:
