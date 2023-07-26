@@ -30,6 +30,8 @@ def get_samp_id(sample_info_filepath):
 
 def get_seqtype(sample_info_filepath):
     with open(sample_info_filepath) as handle:
+        for line in handle.readlines():
+            print(line)
         seqtypes = [line.split("\t")[1] for line in handle.readlines()]
 
     return seqtypes
