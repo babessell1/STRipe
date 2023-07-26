@@ -24,9 +24,9 @@ rule all: input: rule_all
 # Rule to index the input cram file
 rule index_cram:
     input:
-        os.path.join(config["SHORT_READS_DIR"], "{sid}.{seqtype}.sorted.cram")
+        os.path.join(config["SHORT_READS_DIR"], "{sid}.{seqtype}.final.cram")
     output:
-        os.path.join(config["SHORT_READS_DIR"], "{sid}.{seqtype}.sorted.cram.crai")
+        os.path.join(config["SHORT_READS_DIR"], "{sid}.{seqtype}.final.cram.crai")
     conda: "envs/sam.yaml"
     shell:
         """
