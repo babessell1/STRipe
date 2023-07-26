@@ -43,7 +43,6 @@ rule strling:
     params:
         out_dir = config["OUT_DIR"],
         sid = "{sid}",
-        seqtype = "{seqtype}",
         strling = config["STRLING_PATH"],
         ref_fasta = config["REF_FASTA"]
     threads: 1
