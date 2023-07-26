@@ -34,7 +34,7 @@ rule strling:
     output:
         os.path.join(config["OUT_DIR"], "strling", "{sid}.final-genotype.txt")
     params:
-        out_dir = config["OUT_DIR"]
+        out_dir = config["OUT_DIR"],
         sid = "{sid}",
         seqtype = "{seqtype}",
         strling = config["STRLING_PATH"],
