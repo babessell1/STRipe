@@ -6,16 +6,16 @@ configfile: "config.yaml"
 
 rule_all = [
     expand(
+        os.path.join(config["SHORT_READS_DIR"], "{sid}.final.cram.crai"),
+        zip,
+        sid=get_samp_id(os.path.join(config["OUT_DIR"], "sample_info_common.tsv"))
+    ),expand(
         os.path.join(config["OUT_DIR"], "strling", "{sid}.final-genotype.txt"),
         zip,
         sid=get_samp_id(os.path.join(config["OUT_DIR"], "sample_info_common.tsv")),
         seqtype=get_seqtype(os.path.join(config["OUT_DIR"], "sample_info_common.tsv"))
-    ),
-    expand(
-        os.path.join(config["SHORT_READS_DIR"], "{sid}.final.cram.crai"),
-        zip,
-        sid=get_samp_id(os.path.join(config["OUT_DIR"], "sample_info_common.tsv"))
     )
+
 ]
 
 
