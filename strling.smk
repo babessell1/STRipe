@@ -1,3 +1,9 @@
+import os
+import sys
+from warnings import warn
+from py.helpers import *
+configfile: "config.yaml"
+
 rule_all = [
     expand(
         os.path.join(config["OUT_DIR"], "strling", "{sid}.final-genotype.txt"),
