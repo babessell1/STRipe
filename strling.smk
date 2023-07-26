@@ -37,7 +37,7 @@ rule index_cram:
 rule strling:
     input:
         cram=os.path.join(config["SHORT_READS_DIR"], "{sid}.final.cram"),
-        index=rules.index_cram.output
+        index=os.path.join(config["SHORT_READS_DIR"], "{sid}.final.cram.crai")
     output:
         os.path.join(config["OUT_DIR"], "strling", "{sid}.final-genotype.txt")
     params:
