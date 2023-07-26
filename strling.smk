@@ -27,6 +27,7 @@ rule index_cram:
         os.path.join(config["SHORT_READS_DIR"], "{sid}.{seqtype}.sorted.cram")
     output:
         os.path.join(config["SHORT_READS_DIR"], "{sid}.{seqtype}.sorted.cram.crai")
+    conda: "envs/sam.yaml"
     shell:
         """
         samtools index -@ 2 {input}
