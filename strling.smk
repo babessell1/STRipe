@@ -50,6 +50,7 @@ rule strling:
     shell:
         """
         bname=$(basename "{input.cram}" .cram)
+        mkdir -p output
         {params.strling} extract -f "{params.ref_fasta}" "{input.cram}" "output/${{bname}}.bin"
         {params.strling} call --output-prefix "{params.out_dir}/strling//${{bname}}" -f "{params.ref_fasta}" "{input.cram}" "output/${{bname}}.bin"
         """
