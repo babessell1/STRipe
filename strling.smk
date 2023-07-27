@@ -36,7 +36,6 @@ rule index_cram:
         samtools index -@ 2 {input}
         """
 
-'''
 # Rule to run strling
 rule strling:
     input:
@@ -57,4 +56,3 @@ rule strling:
         {params.strling} extract -f "{params.ref_fasta}" "{input.cram}" "output/${{bname}}.bin"
         {params.strling} call --output-prefix "{params.out_dir}/strling//${{bname}}" -f "{params.ref_fasta}" "{input.cram}" "output/${{bname}}.bin"
         """
-'''
