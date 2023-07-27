@@ -9,9 +9,7 @@ rule_all = [
         os.path.join(config["SHORT_READS_DIR"], "{sid}.final.cram.crai"),
         zip,
         sid=get_samp_id(os.path.join(config["OUT_DIR"], "sample_info_common.tsv"))
-    )
-]
-'''
+    ),
     expand(
         os.path.join(config["OUT_DIR"], "strling", "{sid}.final-genotype.txt"),
         zip,
@@ -20,7 +18,6 @@ rule_all = [
     )
 
 ]
-'''
 
 rule all: input: rule_all
 
