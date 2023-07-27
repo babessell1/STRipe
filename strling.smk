@@ -9,7 +9,10 @@ rule_all = [
         os.path.join(config["SHORT_READS_DIR"], "{sid}.final.cram.crai"),
         zip,
         sid=get_samp_id(os.path.join(config["OUT_DIR"], "sample_info_common.tsv"))
-    ),expand(
+    )
+]
+'''
+    expand(
         os.path.join(config["OUT_DIR"], "strling", "{sid}.final-genotype.txt"),
         zip,
         sid=get_samp_id(os.path.join(config["OUT_DIR"], "sample_info_common.tsv")),
@@ -17,7 +20,7 @@ rule_all = [
     )
 
 ]
-
+'''
 
 rule all: input: rule_all
 
@@ -33,6 +36,7 @@ rule index_cram:
         samtools index -@ 2 {input}
         """
 
+'''
 # Rule to run strling
 rule strling:
     input:
@@ -53,3 +57,4 @@ rule strling:
         {params.strling} extract -f "{params.ref_fasta}" "{input.cram}" "output/${{bname}}.bin"
         {params.strling} call --output-prefix "{params.out_dir}/strling//${{bname}}" -f "{params.ref_fasta}" "{input.cram}" "output/${{bname}}.bin"
         """
+'''
