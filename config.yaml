@@ -12,3 +12,6 @@ STRLING_PATH: "/home/bbessell/software/strling"
 IGNORE_SAMPLES: "HG00513, HG00514, HG00732, HG02492"
 VAMOS_PATH: "/home/bbessell/software/vamos-v1.2.0_x64-linux"
 EMOTIFS: "/home/bbessell/refs/vntr_region_motifs.e.bed"
+EHDN_PATH:
+TRGT_PATH:
+TRASH_PATH:
