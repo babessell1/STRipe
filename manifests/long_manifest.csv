@@ -1,1 +1,7 @@
-sample_name,haplotype,datatype,long_read_url
+sample_name,haplotype,datatype,long_read_url,file_num
+HG00099,NA,bam,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/HG00099/raw_data/PacBio_HiFi/m54329U_220825_174247-bc2012.5mc.hifi_reads.bam,1
+HG00099,NA,bam,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/HG00099/raw_data/PacBio_HiFi/m54329U_220827_143814-bc2050.5mc.hifi_reads.bam,2
+HG00099,NA,bam,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/HG00099/raw_data/PacBio_HiFi/m54329U_220829_095708-bc2050.5mc.hifi_reads.bam,3
+NA18522,NA,bam,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/NA18522/raw_data/PacBio_HiFi/m54329U_220604_002013-bc2021.5mc.hifi_reads.bam,1
+NA18522,NA,bam,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/NA18522/raw_data/PacBio_HiFi/m54329U_220605_194957-bc2021.5mc.hifi_reads.bam,2
+NA18522,NA,bam,https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/NA18522/raw_data/PacBio_HiFi/m54329U_220607_194753-bc2021.5mc.hifi_reads.bam,3
