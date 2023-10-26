@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#SBATCH --account=
 #SBATCH --job-name=stromboli
 #SBATCH --partition=standard
 #SBATCH --nodes=1
