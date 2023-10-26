@@ -19,7 +19,6 @@ rule download_short:
         num=lambda wildcards: sample_dict["short"][wildcards.sample]["file_num"],
         url=lambda wildcards: sample_dict["short"][wildcards.sample]["url"]
     shell:
-    
         """
         # if url is not s3 use wget
         mkdir -p raw_data/short_reads
