@@ -1,4 +1,4 @@
-from py/helpers import *
+from py.helpers import *
 configfile: "config.yaml"
 
 sample_dict = get_sample_dict(configfile)
