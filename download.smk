@@ -1,7 +1,7 @@
 from py.helpers import *
 configfile: "config.yaml"
 
-sample_dict = get_sample_dict(configfile)
+sample_dict = get_sample_dict(config)
 
 rule all:
     input:
