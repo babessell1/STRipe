@@ -40,7 +40,7 @@ def get_sample_dict(config):
             "datatype": {} # fasta
         },
     }
-    with open(config["short_manifest"]) as handle:
+    with open(config["SHORT_MANIFEST"]) as handle:
         # line is: sample_name,haplotype,file_num,datatype,short_read_url
         for line in handle.readlines():
             sample, haplotype, file_num, datatype, url = line.split(",")
@@ -48,7 +48,7 @@ def get_sample_dict(config):
             sample_dicts["short"]["url"][sample] = url
             sample_dicts["short"]["file_num"][sample] = file_num
             sample_dicts["short"]["datatype"][sample] = datatype
-    with open(config["long_manifest"]) as handle:
+    with open(config["LONG_MANIFEST"]) as handle:
         # line is: sample_name,haplotype,file_num,long_read_url
         for line in handle.readlines():
             sample, haplotype, file_num, datatype, url = line.split(",")
