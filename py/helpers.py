@@ -11,7 +11,7 @@ with open("config.yaml", 'r') as handle:
         print(exc)
 
 
-def make_sample_dict(config):
+def get_sample_dict(config):
     """
     Create sample dictionaries where samples are keys, and values are either haplotype, filetype, url, or number of files
     this should be done line by line with a generator assming the manifest is a csv at configfile["short_manifest"]
