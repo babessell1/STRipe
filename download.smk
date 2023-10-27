@@ -20,7 +20,6 @@ rule all:
 
 
 rule download_short:
-    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.short.touch")
     output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
     params:
         num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
@@ -38,7 +37,6 @@ rule download_short:
         '''
 
 rule download_hifi:
-    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.touch")
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
     params:
         num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
