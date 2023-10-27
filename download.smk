@@ -3,6 +3,8 @@ configfile: "config.yaml"
 
 sample_dict = get_sample_dict(config, init=True)
 
+print(sample_dict)
+
 rule all:
     input:
         expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"),
