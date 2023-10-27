@@ -15,22 +15,26 @@ print(get_iext(sample_dict, "short"))
 rule all:
     input:
         expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"),
+            zip,
             sample=get_samples(sample_dict, "short"),
             num=get_num(sample_dict, "short"),
             ext=get_ext(sample_dict, "short")
         ),
         expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}"),
+            zip,
             sample=get_samples(sample_dict, "hifi"),
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi")
         ),
         expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.{iext}"),
+            zip,
             sample=get_samples(sample_dict, "short"),
             num=get_num(sample_dict, "short"),
             ext=get_ext(sample_dict, "short"),
             iext=get_iext(sample_dict, "short")
         ),
         expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}"),
+            zip,
             sample=get_samples(sample_dict, "hifi"),
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi"),
@@ -76,7 +80,6 @@ rule get_short_index:
     input:  rules.download_short.output
     output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.{iext}")
     params:
-        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample],
         ext=lambda wildcards: sample_dict["short"]["ext"][wildcards.sample],
         iext=lambda wildcards: sample_dict["short"]["iext"][wildcards.sample]
@@ -94,7 +97,6 @@ rule get_hifi_index:
     input: rules.download_hifi.output
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}")
     params:
-        num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample],
         ext=lambda wildcards: sample_dict["hifi"]["ext"][wildcards.sample],
         iext=lambda wildcards: sample_dict["hifi"]["iext"][wildcards.sample]
