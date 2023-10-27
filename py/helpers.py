@@ -65,9 +65,14 @@ def get_sample_dict(config, init=False):
         # line is: sample_name,haplotype,file_num,long_read_url
         for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
+            if init:
+                sample = sample + "." + file_num
+                sample_dicts["short"]["file_num"][sample] = file_num
+            else:
+                sample_dicts["short"]["file_num"][sample] = 1
             if datatype == "FASTA":
                 dkey = "assembly"
-                iext = ".fai"
+                iext = "fai"
             elif datatype == "HIFI":
                 dkey = "hifi"
                 iext = None
@@ -83,7 +88,7 @@ def get_sample_dict(config, init=False):
             sample_dicts[dkey]["file_num"][sample] = file_num
             sample_dicts[dkey]["ext"][sample] = os.path.splitext(url)[1].strip()
             if not iext:
-                iext = ".bai" if sample_dicts[dkey]["ext"][sample] == ".bam" else ".crai"
+                iext = "bai" if sample_dicts[dkey]["ext"][sample] == ".bam" else "crai"
             sample_dicts[dkey]["iext"][sample] = iext
     
     return sample_dicts
