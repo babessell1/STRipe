@@ -49,7 +49,7 @@ def get_sample_dict(config):
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
             sample_dicts["short"]["file_num"][sample] = file_num
-            sample_dicts["short"]["ext"][sample] = url.split(".")[-1]
+            sample_dicts["short"]["ext"][sample] = os.path.splitext(url)[1]
             # touch file so it exist for snakemake
             os.system(f"touch {config['ROOT_DIR']}/touch_files/{sample}.short.touch")
     with open(config["LONG_MANIFEST"]) as handle:
@@ -67,7 +67,7 @@ def get_sample_dict(config):
             sample_dicts[dkey]["haplotype"][sample] = haplotype
             sample_dicts[dkey]["url"][sample] = url
             sample_dicts[dkey]["file_num"][sample] = file_num
-            sample_dicts[dkey]["ext"][sample] = url.split(".")[-1]
+            sample_dicts[dkey]["ext"][sample] = os.path.splitext(url)[1]
             os.system(f"touch {config['ROOT_DIR']}/touch_files/{sample}.{dkey}.touch")
     
     return sample_dicts
