@@ -26,7 +26,6 @@ rule download_short:
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
     shell:
         '''
-        echo {input.url}
         # if url is not s3 use wget
         mkdir -p raw_data/short_reads
         if [[ {params.url} != "https://s3*" ]]; then
