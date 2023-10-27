@@ -8,7 +8,7 @@ rule all:
         expand("data/short/{sample}.short.{ext}",
             sample=list(sample_dict["short"]["url"].keys()),
             ext=[val.split(".")[-1] for val in list(sample_dict["short"]["url"].values())]
-        )
+        ),
         expand("data/hifi/{sample}.hifi.{ext}",
             sample=list(sample_dict["hifi"]["url"].keys()),
             ext=[val.split(".")[-1] for val in list(sample_dict["hifi"]["url"].values())]
