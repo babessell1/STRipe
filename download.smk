@@ -5,12 +5,12 @@ sample_dict = get_sample_dict(config)
 
 rule all:
     input:
-        expand(os.path.join(config[OUT_DIR], "short", "{sample}.short.{num}.{ext}"),
+        expand(os.path.join(config["OUT_DIR"], "short", "{sample}.short.{num}.{ext}"),
             sample=list(sample_dict["short"]["url"].keys()),
             num=[val for val in list(sample_dict["short"]["file_num"].values())],
             ext=[val.split(".")[-1] for val in list(sample_dict["short"]["url"].values())]
         ),
-        expand(os.path.join(config[OUT_DIR], "hifi", "{sample}.hifi.{num}.{ext}"),
+        expand(os.path.join(config["OUT_DIR"], "hifi", "{sample}.hifi.{num}.{ext}"),
             sample=list(sample_dict["hifi"]["url"].keys()),
             num=[val for val in list(sample_dict["hifi"]["file_num"].values())],
             ext=[val.split(".")[-1] for val in list(sample_dict["hifi"]["url"].values())]
