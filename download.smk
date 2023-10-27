@@ -50,8 +50,7 @@ rule download_hifi:
             wget -O "{output}" "{params.url}"
         else
             # Convert the URL to S3 format and download using AWS CLI
-            s3_url=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics~~')
-            aws s3 cp "s3://human-pangenomics${{s3_url}}" "{output}"
+            s3_key=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
+            aws s3 cp "s3://human-pangenomics/${{s3_key}}" "{output}"
         fi
         '''
-    
