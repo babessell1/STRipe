@@ -83,6 +83,7 @@ rule get_short_index:
         wget -O "{output}" "{params.url}.{params.iext}" || samtools index "{input}"
         '''
 
+
 rule get_hifi_index:
     input: rules.download_hifi.output
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}")
