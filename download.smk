@@ -26,13 +26,13 @@ rule all:
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi")
         ),
-        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.cram"),
+        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.crai"),
             zip,
             sample=get_samples(sample_dict, "short"),
             num=get_num(sample_dict, "short"),
             ext=get_ext(sample_dict, "short")
         ),
-        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.bam"),
+        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.bai"),
             zip,
             sample=get_samples(sample_dict, "hifi"),
             num=get_num(sample_dict, "hifi"),
