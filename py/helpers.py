@@ -119,6 +119,9 @@ def string_to_list(stringed_list):  # Ex. "ABC, DEF, GHI"
 
     return items
 
+def list_to_string(listed_items):  # Ex. ["ABC", "DEF", "GHI"]
+    return " ".join(listed_items)
+
 
 def get_samp_id(manifest_path):
     with open(manifest_path) as handle:

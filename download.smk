@@ -17,6 +17,12 @@ rule all:
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi")
         ),
+        expand(os.path.join(config["DATA_DIR"], "assemblies", "{sample}.assembly{ext}"),
+            zip,
+            sample=get_samples(sample_dict, "assembly"),
+            num=get_num(sample_dict, "assembly"),
+            ext=get_ext(sample_dict, "assembly")
+        )
 
 
 rule download_short:
