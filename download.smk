@@ -6,6 +6,10 @@ sample_dict = get_sample_dict(config, init=True)
 print(sample_dict["hifi"]["ext"])
 print(sample_dict["hifi"]["iext"])
 
+print(get_ext(sample_dict, "hifi"))
+print(get_iext(sample_dict, "short"))
+
+
 rule all:
     input:
         expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"),
