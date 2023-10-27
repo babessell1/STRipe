@@ -5,18 +5,20 @@ sample_dict = get_sample_dict(config)
 
 rule all:
     input:
-        expand("data/short/{sample}.short.{ext}",
+        expand(os.path.join(config[OUT_DIR], "short", "{sample}.short.{num}.{ext}"),
             sample=list(sample_dict["short"]["url"].keys()),
+            num=[val for val in list(sample_dict["short"]["file_num"].values())],
             ext=[val.split(".")[-1] for val in list(sample_dict["short"]["url"].values())]
         ),
-        expand("data/hifi/{sample}.hifi.{ext}",
+        expand(os.path.join(config[OUT_DIR], "hifi", "{sample}.hifi.{num}.{ext}"),
             sample=list(sample_dict["hifi"]["url"].keys()),
+            num=[val for val in list(sample_dict["hifi"]["file_num"].values())],
             ext=[val.split(".")[-1] for val in list(sample_dict["hifi"]["url"].values())]
         )
 
 
 rule download_short:
-    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.short.touch")
+    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.short.{num}.touch")
     output: os.path.join(config["DATA_DIR"], "short", "{sample}.short.{num}.{ext}")
     params:
         num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
@@ -33,7 +35,7 @@ rule download_short:
         """
 
 rule download_hifi:
-    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.touch")
+    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.{num}.touch")
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi.{num}.{ext}")
     params:
         num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
