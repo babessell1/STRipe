@@ -3,7 +3,7 @@ configfile: "config.yaml"
 
 sample_dict = get_sample_dict(config, init=True)
 
-print(sample_dict)
+print(sample_dict["short"]["url"])
 
 rule all:
     input:
