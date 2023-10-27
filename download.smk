@@ -45,7 +45,7 @@ rule download_hifi:
         mkdir -p raw_data/hifi
         mkdir -p raw_data/assemblies
         # if url is not s3 use wget
-        if [[ ! "{params.url}"" == "https://s3"* ]]; then
+        if [[ ! "{params.url}" == "https://s3"* ]]; then
             wget -O "{output}" "{params.url}"
         else
             aws s3 cp "{params.url}" "{output}"
