@@ -3,7 +3,8 @@ configfile: "config.yaml"
 
 sample_dict = get_sample_dict(config, init=True)
 
-print(sample_dict["short"]["url"])
+print(sample_dict["hifi"]["ext"])
+print(sample_dict["hifi"]["iext"])
 
 rule all:
     input:
@@ -24,7 +25,6 @@ rule all:
             iext=get_iext(sample_dict, "short")
         ),
         expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}"),
-            
             sample=get_samples(sample_dict, "hifi"),
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi"),

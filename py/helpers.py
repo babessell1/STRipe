@@ -59,7 +59,7 @@ def get_sample_dict(config, init=False):
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
             sample_dicts["short"]["ext"][sample] = os.path.splitext(url)[1]
-            iext = ".bai" if sample_dicts["short"]["ext"][sample] == "bam" else "crai"
+            iext = ".bai" if sample_dicts["short"]["ext"][sample] == ".bam" else "crai"
             sample_dicts["short"]["iext"][sample] = iext
             # touch file so it exist for snakemake
     with open(config["LONG_MANIFEST"]) as handle:
