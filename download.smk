@@ -28,10 +28,10 @@ rule download_short:
         '''
         # if url is not s3 use wget
         mkdir -p raw_data/short_reads
-        if [[ ! {params.url} == "https://s3"* ]]; then
-            wget -O {output} {params.url}
+        if [[ ! "{params.url}" == "https://s3"* ]]; then
+            wget -O "{output}" {params.url}
         else
-            aws s3 cp {params.url} {output}
+            aws s3 cp "{params.url}" "{output}"
         fi
         '''
 
@@ -45,10 +45,10 @@ rule download_hifi:
         mkdir -p raw_data/hifi
         mkdir -p raw_data/assemblies
         # if url is not s3 use wget
-        if [[ ! {params.url} == "https://s3"* ]]; then
-            wget -O {output} {params.url}
+        if [[ ! "{params.url}"" == "https://s3"* ]]; then
+            wget -O "{output}" "{params.url}"
         else
-            aws s3 cp {params.url} {output}
+            aws s3 cp "{params.url}" "{output}"
         fi
         '''
     
