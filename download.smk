@@ -19,7 +19,7 @@ rule download_short:
     input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.short.touch")
     output: os.path.join(config["RAW_DIR"], "short", "{sample}.short.{num}.{ext}")
     params:
-        num=sample_dict["short"]["num"]["{sample}"]
+        num=sample_dict["short"]["num"]["{sample}"],
         url=samples_dict["short"]["url"]["{sample}"]
     shell:
         """
@@ -36,7 +36,7 @@ rule download_hifi:
     input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.touch")
     output: os.path.join(config["RAW_DIR"], "hifi", "{sample}.hifi.{num}.{ext}")
     params:
-        num=sample_dict["hifi"]["num"]["{sample}"]
+        num=sample_dict["hifi"]["num"]["{sample}"],
         url=samples_dict["hifi"]["url"]["{sample}"]
     shell:
         """
