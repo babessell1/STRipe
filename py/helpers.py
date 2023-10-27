@@ -46,6 +46,7 @@ def get_sample_dict(config):
         # line is: sample_name,haplotype,file_num,datatype,short_read_url
         for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
+            sample = sample + "." + file_num
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
             sample_dicts["short"]["file_num"][sample] = file_num
@@ -64,6 +65,8 @@ def get_sample_dict(config):
                 dkey = "clr"
             else:
                 raise ValueError(f"Datatype in the long manifest to either FASTA, HIFI, or CLR, not '{datatype}'")
+            # check if value exists at sample key
+            sample = sample + "." + file_num
             sample_dicts[dkey]["haplotype"][sample] = haplotype
             sample_dicts[dkey]["url"][sample] = url
             sample_dicts[dkey]["file_num"][sample] = file_num
