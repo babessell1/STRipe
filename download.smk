@@ -5,8 +5,13 @@ sample_dict = get_sample_dict(config)
 
 rule all:
     input:
-        expand("data/short/{sample}.short.{ext}", sample=wildcards.short, datatype=sample_dict["short"]["ext"][wildcards.short]),
-        expand("data/hifi/{sample}.hifi.{ext}", sample=wildcards.hifi, datatype=sample_dict["hifi"]["ext"][wildcards.hifi])
+        expand("data/short/{sample}.short.{ext}",
+            sample=list(sample_dict["short"]["url"].keys())),
+            ext=[val.split(".")[-1] for val in list(sample_dict["short"]["url"].values())],
+
+        expand("data/hifi/{sample}.hifi.{ext}",
+            sample=list(sample_dict["hifi"]["url"].keys())),
+            ext=[val.split(".")[-1] for val in list(sample_dict["hifi"]["url"].values())],
 
 
 rule download_short:
