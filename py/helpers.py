@@ -67,7 +67,7 @@ def get_sample_dict(config):
                 iext = ".fai"
             elif datatype == "HIFI":
                 dkey = "hifi"
-                dkey = None
+                iext = None
             elif datatype == "CLR":
                 dkey = "clr"
                 iext = None
