@@ -45,7 +45,7 @@ ruleorder: download_short > get_short_index
 ruleorder: download_hifi > get_hifi_index
 
 rule download_short:
-    output: os.path.join(config["DATA_DIR"], "short", "{sample}.short.cram")
+    output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
     params:
         num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
@@ -58,7 +58,7 @@ rule download_short:
 
 
 rule download_hifi:
-    output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi.bam")
+    output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
     params:
         num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
