@@ -11,7 +11,7 @@ with open("config.yaml", 'r') as handle:
         print(exc)
 
 
-def get_sample_dict(config):
+def get_sample_dict(config, init=False):
     """
     Create sample dictionaries where samples are keys, and values are either haplotype, filetype, url, or number of files
     this should be done line by line with a generator assming the manifest is a csv at configfile["short_manifest"]
@@ -50,10 +50,13 @@ def get_sample_dict(config):
         # line is: sample_name,haplotype,file_num,datatype,short_read_url
         for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
-            sample = sample + "." + file_num
+            if init:
+                sample = sample + "." + file_num
+                sample_dicts["short"]["file_num"][sample] = file_num
+            else:
+                sample_dicts["short"]["file_num"][sample] = 1
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
-            sample_dicts["short"]["file_num"][sample] = file_num
             sample_dicts["short"]["ext"][sample] = os.path.splitext(url)[1].strip()
             iext = ".bai" if sample_dicts["short"]["ext"][sample] == ".bam" else ".crai"
             sample_dicts["short"]["iext"][sample] = iext
@@ -87,6 +90,20 @@ def get_sample_dict(config):
     
     return sample_dicts
 
+def get_samples(sample_dict):
+    return list(sample_dict["hifi"]["url"].keys())
+
+
+def get_num(sample_dict, dtype):
+    return [val for val in list(sample_dict[dtype]["file_num"].values())]
+
+
+def get_ext(sample_dict, dtype):
+    return [val for val in list(sample_dict[dtype]["ext"].values())]
+
+
+def get_iext(sample_dict, dtype):
+    return [val for val in list(sample_dict[dtype]["iext"].values())]
 
 def string_to_list(stringed_list):  # Ex. "ABC, DEF, GHI"
     try:

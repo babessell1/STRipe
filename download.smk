@@ -3,20 +3,33 @@ configfile: "config.yaml"
 
 sample_dict = get_sample_dict(config)
 
-print(sample_dict)
+print(sample_dict, init=True)
 
 rule all:
     input:
         expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"),
-            sample=list(sample_dict["short"]["url"].keys()),
-            num=[val for val in list(sample_dict["short"]["file_num"].values())],
-            ext=[val for val in list(sample_dict["short"]["ext"].values())]
+            sample=get_samples(sample_dict, "short"),
+            num=get_num(sample_dict, "short"),
+            ext=get_ext(sample_dict, "short")
         ),
         expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}"),
-            sample=list(sample_dict["hifi"]["url"].keys()),
-            num=[val for val in list(sample_dict["hifi"]["file_num"].values())],
-            ext=[val for val in list(sample_dict["hifi"]["ext"].values())]
+            sample=get_samples(sample_dict, "hifi"),
+            num=get_num(sample_dict, "hifi"),
+            ext=get_ext(sample_dict, "hifi")
+        ),
+        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}", "{iext}"),
+            sample=get_samples(sample_dict, "short"),
+            num=get_num(sample_dict, "short"),
+            ext=get_ext(sample_dict, "short"),
+            iext=get_iext(sample_dict, "short")
+        ),
+        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}", "{iext}"),
+            sample=get_samples(sample_dict, "hifi"),
+            num=get_num(sample_dict, "hifi"),
+            ext=get_ext(sample_dict, "hifi"),
+            iext=get_iext(sample_dict, "hifi")
         )
+
 
 
 rule download_short:
