@@ -76,10 +76,14 @@ rule get_short_index:
     conda: "envs/sam.yaml"
     shell:
         '''
-        # if url is not S3 use wget
+        # Debugging: Print the values of sample wildcard and sample_dict keys
+        sample = "{sample}"
+        sample_keys = list(sample_dict["short"]["file_num"].keys())
+        echo "Sample: $sample"
+        echo "Sample Dictionary Keys: ${sample_keys[@]}"
+        # if url is not s3 use wget
         mkdir -p raw_data/short_reads
-        # try to download reads from same folder as cram/bam if it exists (just add index)
-        wget -O "{output}" "{params.url}.{params.iext}" || samtools index "{input}"  
+        wget -O "{output}" {params.url}
         '''
 
 rule get_hifi_index:
