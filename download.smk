@@ -11,7 +11,7 @@ rule all:
 
 rule download_short:
     # output should be in config["raw_dir""]
-    input: lambda wildcards: "{raw_dir}/touch/{sample}.short"
+    input: lambda wildcards: "{raw_dir}/touch/{sample}.short.touch"
     output: "{raw_dir}/short/{sample}.short.{ext}"
     params:
         root_dir=config["ROOT_DIR"],
@@ -32,7 +32,7 @@ rule download_short:
         """
 
 rule download_hifi:
-    input: lambda wildcards: "{raw_dir}/touch/{sample}.hifi"
+    input: lambda wildcards: "{raw_dir}/touch/{sample}.hifi.touch"
     output: "{raw_dir}/hifi/{sample}.{datatype}"
     params:
         root_dir=config["ROOT_DIR"],
