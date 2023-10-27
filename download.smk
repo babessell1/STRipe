@@ -28,7 +28,8 @@ rule all:
             iext=get_iext(sample_dict, "hifi")
         )
 
-
+ruleorder: download_short > get_short_index
+ruleorder: download_hifi > get_hifi_index
 
 rule download_short:
     output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
