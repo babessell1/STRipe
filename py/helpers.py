@@ -42,7 +42,7 @@ def get_sample_dict(config):
     }
     with open(config["SHORT_MANIFEST"]) as handle:
         # line is: sample_name,haplotype,file_num,datatype,short_read_url
-        for line in handle.readlines():
+        for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
@@ -50,7 +50,7 @@ def get_sample_dict(config):
             sample_dicts["short"]["datatype"][sample] = datatype
     with open(config["LONG_MANIFEST"]) as handle:
         # line is: sample_name,haplotype,file_num,long_read_url
-        for line in handle.readlines():
+        for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
             if datatype == "FASTA":
                 dkey = "assembly"

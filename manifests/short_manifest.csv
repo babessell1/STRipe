@@ -1,4 +1,4 @@
 sample_name,haplotype,file_num,datatype,short_read_url
-NA06985,NA,1,cram,https://ftp-trace.ncbi.nlm.nih.gov/1000genomes/ftp/1000G_2504_high_coverage/data/ERR3239276/NA06985.final.cram
-NA06986,NA,1,cram,https://ftp-trace.ncbi.nlm.nih.gov/1000genomes/ftp/1000G_2504_high_coverage/data/ERR3239277/NA06986.final.cram
-NA06994,NA,1,cram,https://ftp-trace.ncbi.nlm.nih.gov/1000genomes/ftp/1000G_2504_high_coverage/data/ERR3239278/NA06994.final.cram
+NA06985,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov/1000genomes/ftp/1000G_2504_high_coverage/data/ERR3239276/NA06985.final.cram
+NA06986,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov/1000genomes/ftp/1000G_2504_high_coverage/data/ERR3239277/NA06986.final.cram
+NA06994,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov/1000genomes/ftp/1000G_2504_high_coverage/data/ERR3239278/NA06994.final.cram
