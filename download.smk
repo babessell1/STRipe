@@ -26,7 +26,7 @@ rule all:
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi")
         ),
-        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.cram),
+        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.cram"),
             zip,
             sample=get_samples(sample_dict, "short"),
             num=get_num(sample_dict, "short"),
