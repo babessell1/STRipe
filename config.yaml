@@ -1,5 +1,6 @@
 OUT_DIR: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/"
 DATA_DIR: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/"
+ROOT_DIR: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/"
 REF_FASTA: "/scratch/remills_root/remills99/bbessell/genomes/GRCh38_full_analysis_set_plus_decoy_hla.fa"
 CHROMOSOMES: "chr21"
 SHORT_MANIFEST: "manifests/short_manifest.csv"

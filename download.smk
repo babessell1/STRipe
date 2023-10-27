@@ -11,42 +11,44 @@ rule all:
 
 rule download_short:
     # output should be in config["raw_dir""]
-    output:
-        "{raw_dir}/short/{sample}.short.{ext}"
+    input: lambda wildcards: "{raw_dir}/touch/{sample}.short"
+    output: "{raw_dir}/short/{sample}.short.{ext}"
     params:
-        raw_dir=config["raw_dir"],
+        root_dir=config["ROOT_DIR"],
+        raw_dir=config["RAW_DIR"],
         sample=lambda wildcards: wildcards.sample,
-        ext=lambda wildcards: sample_dict["short"]["ext"][wildcards.sample],
-        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
-        url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
+        ext=lambda wildcards: sample_dict["short"]["ext"][wildcards.hifi],
+        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.hifi],
+        url=lambda wildcards: sample_dict["short"]["url"][wildcards.short]
     shell:
         """
         # if url is not s3 use wget
         mkdir -p raw_data/short_reads
-        if [[ {params.url} != https://s3* ]]; then
+        if [[ {input.url} != https://s3* ]]; then
             wget -O {output} {params.url}
         else
-            aws s3 cp {params.url} {output}
+            aws s3 cp {input.url} {output}
         fi
         """
 
 rule download_hifi:
-    output:
-        "{raw_dir}/hifi/{sample}.{datatype}"
+    input: lambda wildcards: "{raw_dir}/touch/{sample}.hifi"
+    output: "{raw_dir}/hifi/{sample}.{datatype}"
     params:
-        raw_dir=config["raw_dir"],
+        root_dir=config["ROOT_DIR"],
+        raw_dir=config["RAW_DIR"],
         sample=lambda wildcards: wildcards.sample,
         datatype=lambda wildcards: sample_dict["hifi"]["ext"][wildcards.sample],
-        url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
+        url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
     shell:
         """
         mkdir -p raw_data/hifi
         mkdir -p raw_data/assemblies
         # if url is not s3 use wget
-        if [[ {params.url} != https://s3* ]]; then
+        if [[ {input.url} != https://s3* ]]; then
             wget -O {output} {params.url}
         else
-            aws s3 cp {params.url} {output}
+            aws s3 cp {input.url} {output}
         fi
         """
     
