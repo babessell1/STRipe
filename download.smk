@@ -26,19 +26,17 @@ rule all:
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi")
         ),
-        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.{iext}"),
+        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.cram),
             zip,
             sample=get_samples(sample_dict, "short"),
             num=get_num(sample_dict, "short"),
-            ext=get_ext(sample_dict, "short"),
-            iext=get_iext(sample_dict, "short")
+            ext=get_ext(sample_dict, "short")
         ),
-        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}"),
+        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.bam"),
             zip,
             sample=get_samples(sample_dict, "hifi"),
             num=get_num(sample_dict, "hifi"),
-            ext=get_ext(sample_dict, "hifi"),
-            iext=get_iext(sample_dict, "hifi")
+            ext=get_ext(sample_dict, "hifi")
         ),
 
 ruleorder: download_short > get_short_index
