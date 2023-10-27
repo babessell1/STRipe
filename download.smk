@@ -5,19 +5,19 @@ sample_dict = get_sample_dict(config)
 
 rule all:
     input:
-        expand("data/short/{sample}.{datatype}", sample=wildcards.short, datatype=sample_dict["short"][wildcards.short]["datatype"])
+        expand("data/short/{sample}.{datatype}", sample=wildcards.short, datatype=sample_dict["short"]["datatype"][wildcards.short])
 
 
 rule download_short:
     # output should be in config["raw_dir""]
     output:
-        "{raw_dir}/short_reads/{sample}.{datatype}}"
+        "{raw_dir}/short_reads/{sample}.short.{ext}"
     params:
         raw_dir=config["raw_dir"],
         sample=lambda wildcards: wildcards.sample,
-        datatype=lambda wildcards: sample_dict["short"][wildcards.sample]["datatype"],
-        num=lambda wildcards: sample_dict["short"][wildcards.sample]["file_num"],
-        url=lambda wildcards: sample_dict["short"][wildcards.sample]["url"]
+        ext=lambda wildcards: sample_dict["short"]["ext"][wildcards.sample],
+        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
+        url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
     shell:
         """
         # if url is not s3 use wget
@@ -35,8 +35,8 @@ rule download_hifi:
     params:
         raw_dir=config["raw_dir"],
         sample=lambda wildcards: wildcards.sample,
-        datatype=lambda wildcards: sample_dict["hifi"][wildcards.sample]["datatype"],
-        url=lambda wildcards: sample_dict["hifi"][wildcards.sample]["url"]
+        datatype=lambda wildcards: sample_dict["hifi"]["ext"][wildcards.sample],
+        url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
     shell:
         """
         mkdir -p raw_data/hifi

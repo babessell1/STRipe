@@ -47,7 +47,7 @@ def get_sample_dict(config):
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
             sample_dicts["short"]["file_num"][sample] = file_num
-            sample_dicts["short"]["datatype"][sample] = datatype
+            sample_dicts["short"]["ext"][sample] = url.split(".")[-1]
     with open(config["LONG_MANIFEST"]) as handle:
         # line is: sample_name,haplotype,file_num,long_read_url
         for line in handle.readlines()[1:]:
@@ -63,7 +63,7 @@ def get_sample_dict(config):
             sample_dicts[dkey]["haplotype"][sample] = haplotype
             sample_dicts[dkey]["url"][sample] = url
             sample_dicts[dkey]["file_num"][sample] = file_num
-            sample_dicts[dkey]["datatype"][sample] = datatype
+            sample_dicts[dkey]["ext"][sample] = url.split(".")[-1]
     
     return sample_dicts
 
