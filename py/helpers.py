@@ -85,8 +85,6 @@ def get_sample_dict(config, init=False):
             if not iext:
                 iext = ".bai" if sample_dicts[dkey]["ext"][sample] == ".bam" else ".crai"
             sample_dicts[dkey]["iext"][sample] = iext
-            print(sample_dicts[dkey]["iext"][sample])
-    
     
     return sample_dicts
 
