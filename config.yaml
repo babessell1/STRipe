@@ -4,7 +4,7 @@ ROOT_DIR: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/"
 REF_FASTA: "/scratch/remills_root/remills99/bbessell/genomes/GRCh38_full_analysis_set_plus_decoy_hla.fa"
 CHROMOSOMES: "chr21"
 SHORT_MANIFEST: "manifests/short_manifest.csv"
-LONG_MANIFEST: "manifests/long_manifest.csv"
+LONG_MANIFEST: "manifests/temp_manifest.csv"
 EHDN_PATH:
 TRGT_PATH:
 TRASH_PATH:

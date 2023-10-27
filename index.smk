@@ -1,5 +1,5 @@
-from py.helpers import *
 configfile: "config.yaml"
+from py.helpers import *
 
 sample_dict = get_sample_dict(config, init=True)
 
