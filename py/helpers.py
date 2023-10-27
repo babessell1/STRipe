@@ -82,7 +82,6 @@ def get_sample_dict(config, init=False):
             else:
                 raise ValueError(f"Datatype in the long manifest to either FASTA, HIFI, or CLR, not '{datatype}'")
             # check if value exists at sample key
-            sample = sample + "." + file_num
             sample_dicts[dkey]["haplotype"][sample] = haplotype
             sample_dicts[dkey]["url"][sample] = url
             sample_dicts[dkey]["file_num"][sample] = file_num
