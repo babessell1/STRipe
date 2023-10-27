@@ -22,24 +22,28 @@ def get_sample_dict(config):
             "url": {}, # location to download
             "file_num": {}, # number of split bams
             "ext": {}, # bam or cram
+            "iext": {} # index extension
         },
         "hifi": {
             "haplotype": {},
             "url": {},
             "file_num": {}, # bam or cram
-            "ext": {} # "bam" or "cram
+            "ext": {}, # "bam" or "cram
+            "iext": {} # index extension
         },
         "clr": {
             "haplotype": {},
             "url": {},
             "file_num": {}, # bam or cram
-            "ext": {} # "bam" or "cram
+            "ext": {}, # "bam" or "cram
+            "iext": {} # index extension
         },
         "assembly": {
             "haplotype": {},
             "url": {},
             "file_num": {},
-            "ext": {} # fasta
+            "ext": {}, # fasta
+            "iext": {} # index extension
         },
     }
     with open(config["SHORT_MANIFEST"]) as handle:
@@ -51,6 +55,8 @@ def get_sample_dict(config):
             sample_dicts["short"]["url"][sample] = url
             sample_dicts["short"]["file_num"][sample] = file_num
             sample_dicts["short"]["ext"][sample] = os.path.splitext(url)[1].strip()
+            iext = ".bai" if sample_dicts["short"]["ext"][sample] == ".bam" else ".crai"
+            sample_dicts["short"]["iext"][sample] = iext
             # touch file so it exist for snakemake
     with open(config["LONG_MANIFEST"]) as handle:
         # line is: sample_name,haplotype,file_num,long_read_url
@@ -58,10 +64,13 @@ def get_sample_dict(config):
             sample, haplotype, file_num, datatype, url = line.split(",")
             if datatype == "FASTA":
                 dkey = "assembly"
+                iext = ".fai"
             elif datatype == "HIFI":
                 dkey = "hifi"
+                dkey = None
             elif datatype == "CLR":
                 dkey = "clr"
+                iext = None
             else:
                 raise ValueError(f"Datatype in the long manifest to either FASTA, HIFI, or CLR, not '{datatype}'")
             # check if value exists at sample key
@@ -70,6 +79,10 @@ def get_sample_dict(config):
             sample_dicts[dkey]["url"][sample] = url
             sample_dicts[dkey]["file_num"][sample] = file_num
             sample_dicts[dkey]["ext"][sample] = os.path.splitext(url)[1].strip()
+            if not iext:
+                iext = ".bai" if sample_dicts[dkey]["ext"][sample] == ".bam" else ".crai"
+            sample_dicts[dkey]["iext"][sample] = iext
+    
     
     return sample_dicts
 

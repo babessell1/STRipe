@@ -37,6 +37,7 @@ rule download_short:
         fi
         '''
 
+
 rule download_hifi:
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
     params:
@@ -52,5 +53,31 @@ rule download_hifi:
             # Convert the URL to S3 format and download using AWS CLI
             s3_key=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
             aws s3 cp "s3://human-pangenomics/${{s3_key}}" "{output}"
+        fi
+        '''
+
+
+rule get_short_index:
+    
+
+rule get_hifi_index:
+    input: download_hifi.output
+    output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}", "{iext}")
+    params:
+        num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
+        url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample],
+        ext=lambda wildcards: sample_dict["hifi"]["ext"][wildcards.sample],
+        iext=lambda wildcards: sample_dict["hifi"]["iext"][wildcards.sample]
+    shell:
+        '''
+        # if url is not S3 use wget
+        mkdir -p raw_data/short_reads
+        # try to download reads from same folder as cram/bam if it exists (just add index)
+        if [[ ! "{params.url}" == "https://s3"* ]]; then
+            wget -O "{output}" "{params.url}.{params.iext}" || samtools index "{input}"
+        else
+            # Convert the URL to S3 format and download using AWS CLI
+            s3_key=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
+            aws s3 cp "s3://human-pangenomics/${{s3_key}}.{params.iext}" "{output}" || samtools index "{input}"
         fi
         '''
