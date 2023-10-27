@@ -36,14 +36,14 @@ rule run_all:
                     cores=1,
                 )
                 snakemake(
-                        snakefile="merge.smk",
-                        configfile="config.yaml",
-                        cores=1,
+                    snakefile="merge.smk",
+                    configfile="config.yaml",
+                    cores=1,
                 )
                 snakemake(
-                        snakefile="call_trgt.smk",
-                        configfile="config.yaml",
-                        cores=1,
+                    snakefile="call_trgt.smk",
+                    configfile="config.yaml",
+                    cores=1,
                 )
                 
 

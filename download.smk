@@ -22,7 +22,6 @@ rule all:
 rule download_short:
     output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
     params:
-        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
     shell:
          '''
@@ -35,7 +34,6 @@ rule download_short:
 rule download_hifi:
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
     params:
-        num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
     shell:
         '''
@@ -48,4 +46,15 @@ rule download_hifi:
             s3_key=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
             aws s3 cp "s3://human-pangenomics/${{s3_key}}" "{output}"
         fi
+        '''
+
+rule download_assembly:
+    output: os.path.join(config["DATA_DIR"], "assembly", "{sample}.assembly{ext}")
+    params:
+        url=lambda wildcards: sample_dict["assembly"]["url"][wildcards.sample]
+    shell:
+        '''
+        # if url is not s3 use wget
+        mkdir -p raw_data/assemblies
+        wget -O "{output}" {params.url}
         '''
