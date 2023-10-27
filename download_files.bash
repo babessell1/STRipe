@@ -12,7 +12,7 @@
 #eval "$(conda shell.bash hook)"
 #conda activate tricolor
 snakemake -s download.smk \
-    --n -r \
+    -n -r \
     --cores 1 \
     --rerun-incomplete \
     --use-conda
