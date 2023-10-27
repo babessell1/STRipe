@@ -7,12 +7,12 @@ print(sample_dict)
 
 rule all:
     input:
-        expand(os.path.join(config["OUT_DIR"], "short", "{sample}.short{ext}"),
+        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"),
             sample=list(sample_dict["short"]["url"].keys()),
             num=[val for val in list(sample_dict["short"]["file_num"].values())],
             ext=[val for val in list(sample_dict["short"]["ext"].values())]
         ),
-        expand(os.path.join(config["OUT_DIR"], "hifi", "{sample}.hifi{ext}"),
+        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}"),
             sample=list(sample_dict["hifi"]["url"].keys()),
             num=[val for val in list(sample_dict["hifi"]["file_num"].values())],
             ext=[val for val in list(sample_dict["hifi"]["ext"].values())]
