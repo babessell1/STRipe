@@ -50,6 +50,7 @@ def get_sample_dict(config, init=False):
         # line is: sample_name,haplotype,file_num,datatype,short_read_url
         for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
+            url = url.strip()
             if init:
                 sample = sample + "." + file_num
                 sample_dicts["short"]["file_num"][sample] = file_num
@@ -57,7 +58,7 @@ def get_sample_dict(config, init=False):
                 sample_dicts["short"]["file_num"][sample] = 1
             sample_dicts["short"]["haplotype"][sample] = haplotype
             sample_dicts["short"]["url"][sample] = url
-            sample_dicts["short"]["ext"][sample] = os.path.splitext(url)[1].strip()
+            sample_dicts["short"]["ext"][sample] = os.path.splitext(url)[1]
             iext = ".bai" if sample_dicts["short"]["ext"][sample] == "bam" else "crai"
             sample_dicts["short"]["iext"][sample] = iext
             # touch file so it exist for snakemake
@@ -65,6 +66,7 @@ def get_sample_dict(config, init=False):
         # line is: sample_name,haplotype,file_num,long_read_url
         for line in handle.readlines()[1:]:
             sample, haplotype, file_num, datatype, url = line.split(",")
+            url = url.strip()
             if init:
                 sample = sample + "." + file_num
                 sample_dicts["short"]["file_num"][sample] = file_num
@@ -85,7 +87,7 @@ def get_sample_dict(config, init=False):
             sample_dicts[dkey]["haplotype"][sample] = haplotype
             sample_dicts[dkey]["url"][sample] = url
             sample_dicts[dkey]["file_num"][sample] = file_num
-            sample_dicts[dkey]["ext"][sample] = os.path.splitext(url)[1].strip()
+            sample_dicts[dkey]["ext"][sample] = os.path.splitext(url)[1]
             if not iext:
                 iext = "bai" if sample_dicts[dkey]["ext"][sample] == ".bam" else "crai"
             sample_dicts[dkey]["iext"][sample] = iext
