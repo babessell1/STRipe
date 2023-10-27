@@ -15,13 +15,13 @@ rule all:
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi")
         ),
-        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}", "{iext}"),
+        expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.{iext}"),
             sample=get_samples(sample_dict, "short"),
             num=get_num(sample_dict, "short"),
             ext=get_ext(sample_dict, "short"),
             iext=get_iext(sample_dict, "short")
         ),
-        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}", "{iext}"),
+        expand(os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}"),
             sample=get_samples(sample_dict, "hifi"),
             num=get_num(sample_dict, "hifi"),
             ext=get_ext(sample_dict, "hifi"),
@@ -64,7 +64,7 @@ rule download_hifi:
 
 rule get_short_index:
     input:  os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
-    output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}", "{iext}")
+    output: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.{iext}")
     params:
         num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample],
@@ -81,7 +81,7 @@ rule get_short_index:
 
 rule get_hifi_index:
     input: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
-    output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}", "{iext}")
+    output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}")
     params:
         num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample],
