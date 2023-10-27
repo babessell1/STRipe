@@ -43,15 +43,15 @@ rule download_hifi:
         num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
     shell:
-       '''
-        mkdir -p raw_data/hifi
-        mkdir -p raw_data/assemblies
+        '''
+        # if url is not S3 use wget
+        mkdir -p raw_data/short_reads
         if [[ ! "{params.url}" == "https://s3"* ]]; then
             wget -O "{output}" "{params.url}"
         else
             # Convert the URL to S3 format and download using AWS CLI
             s3_url=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics~~')
-            aws s3 cp "s3://human-pangenomics${s3_url}" "{output}"
+            aws s3 cp "s3://human-pangenomics${{s3_url}}" "{output}"
         fi
         '''
     
