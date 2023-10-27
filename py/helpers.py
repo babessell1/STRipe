@@ -21,23 +21,25 @@ def get_sample_dict(config):
             "haplotype": {}, # haplotype of sample
             "url": {}, # location to download
             "file_num": {}, # number of split bams
-            "datatype": {}, # bam or cram
+            "ext": {}, # bam or cram
         },
         "hifi": {
             "haplotype": {},
             "url": {},
             "file_num": {}, # bam or cram
+            "ext": {} # "bam" or "cram
         },
         "clr": {
             "haplotype": {},
             "url": {},
             "file_num": {}, # bam or cram
+            "ext": {} # "bam" or "cram
         },
         "assembly": {
             "haplotype": {},
             "url": {},
             "file_num": {},
-            "datatype": {} # fasta
+            "ext": {} # fasta
         },
     }
     with open(config["SHORT_MANIFEST"]) as handle:

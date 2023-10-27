@@ -5,13 +5,14 @@ sample_dict = get_sample_dict(config)
 
 rule all:
     input:
-        expand("data/short/{sample}.{datatype}", sample=wildcards.short, datatype=sample_dict["short"]["datatype"][wildcards.short])
+        expand("data/short/{sample}.short.{ext}", sample=wildcards.short, datatype=sample_dict["short"]["ext"][wildcards.short]),
+        expand("data/hifi/{sample}.hifi.{ext}", sample=wildcards.hifi, datatype=sample_dict["hifi"]["ext"][wildcards.hifi])
 
 
 rule download_short:
     # output should be in config["raw_dir""]
     output:
-        "{raw_dir}/short_reads/{sample}.short.{ext}"
+        "{raw_dir}/short/{sample}.short.{ext}"
     params:
         raw_dir=config["raw_dir"],
         sample=lambda wildcards: wildcards.sample,
