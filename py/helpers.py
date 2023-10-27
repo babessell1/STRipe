@@ -95,7 +95,7 @@ def get_sample_dict(config, init=False):
     return sample_dicts
 
 def get_samples(sample_dict, dtype):
-    return list(sample_dict["hifi"]["url"].keys())
+    return list(sample_dict[dtype]["url"].keys())
 
 
 def get_num(sample_dict, dtype):
