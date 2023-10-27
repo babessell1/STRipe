@@ -6,25 +6,21 @@ sample_dict = get_sample_dict(config)
 rule all:
     input:
         expand("data/short/{sample}.short.{ext}",
-            sample=list(sample_dict["short"]["url"].keys())),
-            ext=[val.split(".")[-1] for val in list(sample_dict["short"]["url"].values())],
-
+            sample=list(sample_dict["short"]["url"].keys()),
+            ext=[val.split(".")[-1] for val in list(sample_dict["short"]["url"].values())]
+        )
         expand("data/hifi/{sample}.hifi.{ext}",
-            sample=list(sample_dict["hifi"]["url"].keys())),
-            ext=[val.split(".")[-1] for val in list(sample_dict["hifi"]["url"].values())],
+            sample=list(sample_dict["hifi"]["url"].keys()),
+            ext=[val.split(".")[-1] for val in list(sample_dict["hifi"]["url"].values())]
+        )
 
 
 rule download_short:
-    # output should be in config["raw_dir""]
-    input: lambda wildcards: "{raw_dir}/touch/{sample}.short.touch"
-    output: "{raw_dir}/short/{sample}.short.{ext}"
+    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.short.touch")
+    output: os.path.join(config["RAW_DIR"], "short", "{sample}.short.{num}.{ext}")
     params:
-        root_dir=config["ROOT_DIR"],
-        raw_dir=config["RAW_DIR"],
-        sample=lambda wildcards: wildcards.sample,
-        ext=lambda wildcards: sample_dict["short"]["ext"][wildcards.hifi],
-        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.hifi],
-        url=lambda wildcards: sample_dict["short"]["url"][wildcards.short]
+        num=sample_dict["short"]["num"]["{sample}"]
+        url=samples_dict["short"]["url"]["{sample}"]
     shell:
         """
         # if url is not s3 use wget
@@ -32,19 +28,16 @@ rule download_short:
         if [[ {input.url} != https://s3* ]]; then
             wget -O {output} {params.url}
         else
-            aws s3 cp {input.url} {output}
+            aws s3 cp {params.url} {output}
         fi
         """
 
 rule download_hifi:
-    input: lambda wildcards: "{raw_dir}/touch/{sample}.hifi.touch"
-    output: "{raw_dir}/hifi/{sample}.{datatype}"
+    input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.touch")
+    output: os.path.join(config["RAW_DIR"], "hifi", "{sample}.hifi.{num}.{ext}")
     params:
-        root_dir=config["ROOT_DIR"],
-        raw_dir=config["RAW_DIR"],
-        sample=lambda wildcards: wildcards.sample,
-        datatype=lambda wildcards: sample_dict["hifi"]["ext"][wildcards.sample],
-        url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
+        num=sample_dict["hifi"]["num"]["{sample}"]
+        url=samples_dict["hifi"]["url"]["{sample}"]
     shell:
         """
         mkdir -p raw_data/hifi
@@ -53,7 +46,7 @@ rule download_hifi:
         if [[ {input.url} != https://s3* ]]; then
             wget -O {output} {params.url}
         else
-            aws s3 cp {input.url} {output}
+            aws s3 cp {params.url} {output}
         fi
         """
     
