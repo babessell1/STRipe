@@ -38,7 +38,7 @@ rule get_short_index:
 
 
 rule get_hifi_index:
-    input: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
+    input: os.path.join(config["DATA_DIR"], "hifi", "{sample}.short{ext}")
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}")
     params:
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample],
@@ -56,4 +56,18 @@ rule get_hifi_index:
             s3_key=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
             aws s3 cp "s3://human-pangenomics/${{s3_key}}.{params.index}" "{output}" || samtools index "{input}"
         fi
+        '''
+
+rule get_assembly_index:
+    input: os.path.join(config["DATA_DIR"], "assemblies", "{sample}.assembly{ext}")
+    output: os.path.join(config["DATA_DIR"], "assemblies", "{sample}.assembly{ext}.{iext}")
+    params:
+        url=lambda wildcards: sample_dict["assemblies"]["url"][wildcards.sample],
+        index=lambda wildcards: sample_dict["assemblies"]["iext"][wildcards.sample]
+    conda: "envs/sam.yaml"
+    shell:
+        '''
+        # if url is not S3 use wget
+        mkdir -p raw_data/assemblies
+        wget -O "{output}" "{params.url}.{params.index}" || samtools faidx "{input}"
         '''
