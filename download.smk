@@ -19,8 +19,8 @@ rule download_short:
     input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.short.touch")
     output: os.path.join(config["DATA_DIR"], "short", "{sample}.short.{num}.{ext}")
     params:
-        num=sample_dict["short"]["file_num"]["{sample}"],
-        url=samples_dict["short"]["url"]["{sample}"]
+        num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
+        url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
     shell:
         """
         # if url is not s3 use wget
@@ -36,8 +36,8 @@ rule download_hifi:
     input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.touch")
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi.{num}.{ext}")
     params:
-        num=sample_dict["hifi"]["file_num"]["{sample}"],
-        url=samples_dict["hifi"]["url"]["{sample}"]
+        num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
+        url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
     shell:
         """
         mkdir -p raw_data/hifi
