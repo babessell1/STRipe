@@ -7,6 +7,8 @@ print(sample_dict["hifi"]["ext"])
 print(sample_dict["hifi"]["iext"])
 
 print(get_ext(sample_dict, "hifi"))
+print(get_iext(sample_dict, "hifi"))
+print(get_ext(sample_dict, "short"))
 print(get_iext(sample_dict, "short"))
 
 
