@@ -24,15 +24,15 @@ rule download_short:
         num=lambda wildcards: sample_dict["short"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample]
     shell:
-        """
+        '''
         # if url is not s3 use wget
         mkdir -p raw_data/short_reads
-        if [[ {input.url} != https://s3* ]]; then
+        if [[ {input.url} != "https://s3*" ]]; then
             wget -O {output} {params.url}
         else
             aws s3 cp {params.url} {output}
         fi
-        """
+        '''
 
 rule download_hifi:
     input: os.path.join(config["ROOT_DIR"], "touch", "{sample}.hifi.{num}.touch")
@@ -41,14 +41,14 @@ rule download_hifi:
         num=lambda wildcards: sample_dict["hifi"]["file_num"][wildcards.sample],
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample]
     shell:
-        """
+        '''
         mkdir -p raw_data/hifi
         mkdir -p raw_data/assemblies
         # if url is not s3 use wget
-        if [[ {input.url} != https://s3* ]]; then
+        if [[ {input.url} != "https://s3*" ]]; then
             wget -O {output} {params.url}
         else
             aws s3 cp {params.url} {output}
         fi
-        """
+        '''
     
