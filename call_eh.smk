@@ -17,6 +17,8 @@ rule call_eh:
         prefix=os.path.join(config["DATA_DIR"], "eh", "{sample}"),
         eh=config["EH"]
     conda: "envs/sam.yaml"
+    resources:
+        mem_mb=16000
     threads: 16
     shell:
         '''
@@ -31,9 +33,9 @@ rule call_eh:
 rule subset_json:
     input: output.json
     output: os.path.join(config["DATA_DIR"], "eh", "{sample}_large.json")
-    threads: 1
     resources:
         mem_mb=1000
+    threads: 1
     shell:
         '''
         jq '.LocusResults | with_entries(select(.value.Variants[].CountsOfInrepeatReads != "()"))' {input} > {output}

@@ -17,6 +17,9 @@ rule call_trgt:
         ref=config["REF_FASTA"],
         trgt=config["TRGT"],
         trgt_bed=config["TRGT_BED"],
+    resources:
+        mem_mb=32000
+    threads: 16
     conda: "envs/trgt.yaml"
     shell:
         '''
