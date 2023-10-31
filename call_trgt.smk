@@ -20,6 +20,6 @@ rule call_trgt:
     conda: "envs/trgt.yaml"
     shell:
         '''
-
+        
         '''
 

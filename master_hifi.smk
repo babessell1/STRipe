@@ -8,12 +8,9 @@ include: "call_trgt.smk"
 
 # Define a rule to run all the other rules
 rule run_all:
-    input:
-        rules.download_hifi.output,
-        rules.get_hifi_index.output
     output:
         # Define a dummy output to track the completion of all rules
-        touch("all_rules_completed.txt")
+        "all_rules_completed.txt"
     run:
         with open("manifests/long_manifest.csv") as handle:
             for line in handle:
@@ -45,5 +42,9 @@ rule run_all:
                     configfile="config.yaml",
                     cores=1,
                 )
+                delete_temp_files()
+                delete_hifi_file()
+        touch({output})
+
                 
 
