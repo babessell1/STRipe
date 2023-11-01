@@ -21,7 +21,7 @@ rule all:
 rule get_pileup:
     # input os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}") need wildcard ext
     input: 
-        bam=expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"), zip, sample=sample_dict.keys(), ext=get_ext(sample_dict, "short"))
+        bam=expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"), zip, sample=sample_dict["short"]["ext"].keys(), ext=get_ext(sample_dict, "short"))
     output: os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup")
     resources:
         mem_mb=4000
