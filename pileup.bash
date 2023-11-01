@@ -13,7 +13,7 @@
 #eval "$(conda shell.bash hook)"
 #conda activate tricolor
 
-#salloc -A remills99 -p standard -N 1 -n 11 -t 6:00:00 --mem=44G
+#salloc -A bioinf593f23_class -p standard -N 1 -n 11 -t 6:00:00 --mem=44G
 
 snakemake -s get_pileup.smk --unlock
 snakemake -s get_pileup.smk \

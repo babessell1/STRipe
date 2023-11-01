@@ -26,6 +26,6 @@ rule get_pileup:
         mem_mb=4000
     threads: 1
     params:
-        ref=config["REF_FASTA"]
+        ref=config["REF_FASTA"],
         bed=config["SLOP_BED"]
     shell: "samtools mpileup -f {params.ref} -l {params.bed} {input} > {output}"
