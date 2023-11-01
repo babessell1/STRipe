@@ -29,4 +29,3 @@ rule get_pileup:
         ref=config["REF_FASTA"]
         bed=config["SLOP_BED"]
     shell: "samtools mpileup -f {params.ref} -l {params.bed} {input} > {output}"
-
