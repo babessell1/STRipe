@@ -27,5 +27,5 @@ rule get_pileup:
     threads: 1
     params:
         ref=config["REF_FASTA"]
-    shell: "samtools mpileup -f {params.ref} {input.bam} > {output}"
+    shell: "samtools mpileup -f {params.ref} {input} > {output}"
 
