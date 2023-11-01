@@ -51,7 +51,7 @@ rule get_short_index:
         index=lambda wildcards: sample_dict["short"]["iext"][wildcards.sample]
     conda: "envs/sam.yaml"
     resources:
-        mem_mb: 2000
+        mem_mb=2000
     threads: 1
     shell:
         '''
@@ -67,7 +67,7 @@ rule get_hifi_index:
         index=lambda wildcards: sample_dict["hifi"]["iext"][wildcards.sample]
     conda: "envs/sam.yaml"
     resources:
-        mem_mb: 4000
+        mem_mb=4000
     threads: 1
     shell:
         '''
@@ -82,7 +82,7 @@ rule get_assembly_index:
         url=lambda wildcards: sample_dict["assemblies"]["url"][wildcards.sample],
         index=lambda wildcards: sample_dict["assemblies"]["iext"][wildcards.sample]
     resources:
-        mem_mb: 2000
+        mem_mb=2000
     threads: 1
     conda: "envs/sam.yaml"
     shell:
