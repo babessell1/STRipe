@@ -40,6 +40,3 @@ NA18906,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov//1000genomes/ftp/1000G_250
 HG03492,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov//1000genomes/ftp/1000G_2504_high_coverage/additional_698_related/data//ERR3989173/HG03492.final.cram
 HG03486,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov//1000genomes/ftp/1000G_2504_high_coverage/additional_698_related/data//ERR3989170/HG03486.final.cram
 HG03098,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov//1000genomes/ftp/1000G_2504_high_coverage/additional_698_related/data//ERR3989119/HG03098.final.cram
-HG002,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/NIST_HiSeq_HG002_Homogeneity-10953946/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG002.GRCh38.300x.bam
-HG003,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG003_NA24149_father/NIST_HiSeq_HG003_Homogeneity-12389378/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG003.GRCh38.300x.bam
-HG004,NA,1,short,https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG004_NA24143_mother/NIST_HiSeq_HG004_Homogeneity-14572558/NHGRI_Illumina300X_AJtrio_novoalign_bams/HG004.GRCh38.300x.bam

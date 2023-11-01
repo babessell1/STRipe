@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #SBATCH --account=bioinf593f23_class 
-#SBATCH --job-name=index_bams
+#SBATCH --job-name=get_pileups
 #SBATCH --partition=standard
 #SBATCH --nodes=1
+#SBATCH --mem=44GB
 #SBATCH --ntasks=11
-#SBATCH --mem=22GB
 #SBATCH --time=6:00:00
 #SBATCH --output=logs/stripe_download.out
 #SBATCH --error=logs/stripe_download.err
@@ -15,8 +15,8 @@
 
 #salloc -A remills99 -p standard -N 1 -n 11 -t 6:00:00 --mem=22G
 
-snakemake -s index.smk --unlock
-snakemake -s index.smk \
+snakemake -s get_pileup.smk --unlock
+snakemake -s get_pileup.smk \
     --cores 11 \
     --rerun-incomplete \
     --use-conda
