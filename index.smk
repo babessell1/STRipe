@@ -49,7 +49,6 @@ rule get_short_index:
     params:
         url=lambda wildcards: sample_dict["short"]["url"][wildcards.sample],
         index=lambda wildcards: sample_dict["short"]["iext"][wildcards.sample]
-    conda: "envs/sam.yaml"
     resources:
         mem_mb=2000
     threads: 1
@@ -65,7 +64,6 @@ rule get_hifi_index:
     params:
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample],
         index=lambda wildcards: sample_dict["hifi"]["iext"][wildcards.sample]
-    conda: "envs/sam.yaml"
     resources:
         mem_mb=4000
     threads: 1
@@ -84,7 +82,6 @@ rule get_assembly_index:
     resources:
         mem_mb=2000
     threads: 1
-    conda: "envs/sam.yaml"
     shell:
         '''
         # if url is not S3 use wget

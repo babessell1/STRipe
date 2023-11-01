@@ -16,7 +16,6 @@ rule call_trgt:
     params:
         ref=config["REF_FASTA"],
         trash=config["TRASH"],
-    conda: "envs/trash.yaml"
     shell:
         '''
 

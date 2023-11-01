@@ -20,7 +20,6 @@ rule call_trgt:
     resources:
         mem_mb=32000
     threads: 4
-    conda: "envs/trgt.yaml"
     shell:
         '''
         ./trgt --genome {params.ref} \
