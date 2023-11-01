@@ -16,3 +16,4 @@ rule get_pileup:
         ref=config["REF_FASTA"]
     conda: "envs/sam.yaml"
     shell: "samtools mpileup -f {params.ref} {input} > {output}"
+

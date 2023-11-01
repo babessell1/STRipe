@@ -16,6 +16,6 @@
 #conda activate tricolor
 snakemake -s download.smk --unlock
 snakemake -s download.smk \
-    --cores 1 \
+    --cores 11 \
     --rerun-incomplete \
     --use-conda
