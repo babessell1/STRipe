@@ -6,6 +6,7 @@ sample_dict = get_sample_dict(config, init=False)
 rule all:
     input:
 
+
 rule call_eh:
     input: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
     output:
@@ -30,9 +31,10 @@ rule call_eh:
                 --threads {threads}
         '''
 
+
 rule subset_json:
     input: output.json
-    output: os.path.join(config["DATA_DIR"], "eh", "{sample}_large.json")
+    output: os.path.join(config["DATA_DIR"], "eh", "{sample}_largeOnly.json")
     resources:
         mem_mb=1000
     threads: 1

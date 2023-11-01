@@ -3,14 +3,14 @@ DATA_DIR: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/"
 ROOT_DIR: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/"
 REF_FASTA: "/refs/GRCh38_full_analysis_set_plus_decoy_hla.fa"
 CHROMOSOMES: "chr21"
-SHORT_MANIFEST: "manifests/short_manifest.csv"
-LONG_MANIFEST: "manifests/long_manifest.csv"
+SHORT_MANIFEST: "manifests/illumina_manifest.csv"
+LONG_MANIFEST: "manifests/hifi_manifest.csv"
 EH_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/ExpansionHunter-v5.0.0-linux_x86_64/bin/ExpansionHunter"
 TRGT_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/trgt-v0.5.0-linux_x86_64"
 TRASH_PATH:
 PROCESS_SHORT: True
-PROCESS_HIFI: True
-PROCESS_ASSEMBLY: True
+PROCESS_HIFI: False
+PROCESS_ASSEMBLY: False
 
 #SNP_DIR: "/scratch/remills_root/remills99/bbessell/1kG_SNP_Panel/"
 #SNP_TR_PANEL_DIR: "/scratch/remills_root/remills99/bbessell/EnsembleTR_SNP_TR_Panel/"

@@ -19,10 +19,14 @@ rule call_trgt:
         trgt_bed=config["TRGT_BED"],
     resources:
         mem_mb=32000
-    threads: 16
+    threads: 4
     conda: "envs/trgt.yaml"
     shell:
         '''
-        
+        ./trgt --genome {params.ref} \
+            --repeats {params.trgt_bed} \
+            --reads {input} \
+            --output-prefix {output} \
+            --threads {threads}
         '''
 

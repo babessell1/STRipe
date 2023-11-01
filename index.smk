@@ -67,11 +67,11 @@ rule get_hifi_index:
         index=lambda wildcards: sample_dict["hifi"]["iext"][wildcards.sample]
     conda: "envs/sam.yaml"
     resources:
-        mem_mb: 8000
+        mem_mb: 4000
     threads: 1
     shell:
         '''
-        samtools index "{input}"
+        wget -O "{output}" "{params.url}.{params.index}" || samtools index "{input}"
         '''
 
 

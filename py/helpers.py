@@ -94,6 +94,7 @@ def get_sample_dict(config, init=False):
     
     return sample_dicts
 
+
 def get_samples(sample_dict, dtype):
     return list(sample_dict[dtype]["url"].keys())
 
@@ -109,6 +110,7 @@ def get_ext(sample_dict, dtype):
 def get_iext(sample_dict, dtype):
     return [val for val in list(sample_dict[dtype]["iext"].values())]
 
+
 def string_to_list(stringed_list):  # Ex. "ABC, DEF, GHI"
     try:
         items = stringed_list.replace(" ", "").split(",")
@@ -118,6 +120,7 @@ def string_to_list(stringed_list):  # Ex. "ABC, DEF, GHI"
             '"ABC, DEF, GHI, ..."')
 
     return items
+
 
 def list_to_string(listed_items):  # Ex. ["ABC", "DEF", "GHI"]
     return " ".join(listed_items)
