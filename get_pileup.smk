@@ -4,11 +4,19 @@ from py.helpers import *
 
 sample_dict = get_sample_dict(config, init=False)
 
-rule all:
-    input: expand(
-        os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup"), 
+rule_all = []
+
+rule_all.extend(
+    expand(os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup"),
+        zip,
         sample=sample_dict.keys(),
-        ext=get_ext(sample_dict, "short"))
+        ext=get_ext(sample_dict, "short")
+    )
+)
+
+rule all:
+    input: rule_all
+
 
 rule get_pileup:
     input: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
