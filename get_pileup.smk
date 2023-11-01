@@ -9,7 +9,7 @@ rule_all = []
 rule_all.extend(
     expand(os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup"),
         zip,
-        sample=sample_dict.keys(),
+        sample=get_samples(sample_dict, "short"),
         ext=get_ext(sample_dict, "short")
     )
 )
@@ -21,7 +21,7 @@ rule all:
 rule get_pileup:
     # input os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}") need wildcard ext
     input: 
-        bam=expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"), zip, sample=sample_dict["short"]["ext"].keys(), ext=get_ext(sample_dict, "short"))
+        bam=lambda wildcards: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}.bam".format(sample=get_samples(sample_dict, "short"), ext=get_ext(sample_dict, "short")))
     output: os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup")
     resources:
         mem_mb=4000
