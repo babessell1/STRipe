@@ -20,16 +20,13 @@ rule all:
 
 rule get_pileup:
     # input os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}") need wildcard ext
-    input: expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"),
-        zip,
-        sample=sample_dict.keys(),
-        ext=get_ext(sample_dict, "short")
-    )
+    input: 
+        bam=expand(os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}"), zip, sample=sample_dict.keys(), ext=get_ext(sample_dict, "short"))
     output: os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup")
     resources:
         mem_mb=4000
     threads: 1
     params:
         ref=config["REF_FASTA"]
-    shell: "samtools mpileup -f {params.ref} {input} > {output}"
+    shell: "samtools mpileup -f {params.ref} {input.bam} > {output}"
 
