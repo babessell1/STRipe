@@ -24,6 +24,8 @@ rule get_pileup:
     resources:
         mem_mb=4000
     threads: 1
+    wildcards:
+        ext=get_ext(sample_dict, "short")
     params:
         ref=config["REF_FASTA"]
     shell: "samtools mpileup -f {params.ref} {input} > {output}"
