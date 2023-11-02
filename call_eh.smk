@@ -8,7 +8,7 @@ sample_dict = get_sample_dict(config, init=False)
 
 rule_all = []
 
-rule_all.expand(
+rule_all.extend(
     [
         expand(
             os.path.join(config["DATA_DIR"], "eh", "{sample}.json"),
