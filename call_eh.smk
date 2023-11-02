@@ -18,7 +18,7 @@ rule call_eh:
     params:
         ref=config["REF_FASTA"],
         prefix=os.path.join(config["DATA_DIR"], "eh", "{sample}"),
-        eh=config["EH"]
+        eh=config["EH_PATH"]
     resources:
         mem_mb=16000
     threads: 16
