@@ -34,7 +34,7 @@ rule call_eh:
 
 
 rule subset_json:
-    input: output.json
+    input: rules.call_eh.output.json
     output: os.path.join(config["DATA_DIR"], "eh", "{sample}_largeOnly.json")
     resources:
         mem_mb=1000
