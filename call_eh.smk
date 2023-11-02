@@ -12,19 +12,19 @@ rule_all.extend(
     [
         expand(
             os.path.join(config["DATA_DIR"], "eh", "{sample}.json"),
-            sample=get_samples(config, "short"),
+            sample=get_samples(sample_dict, "short"),
         ),
         expand(
             os.path.join(config["DATA_DIR"], "eh", "{sample}.vcf"),
-            sample=get_samples(config, "short"),
+            sample=get_samples(sample_dict, "short"),
         ),
         expand(
             os.path.join(config["DATA_DIR"], "eh", "{sample}_realigned.bam"),
-            sample=get_samples(config, "short"),
+            sample=get_samples(sample_dict, "short"),
         ),
         expand(
             os.path.join(config["DATA_DIR"], "eh", "{sample}_largeOnly.json"),
-            sample=get_samples(config, "short"),
+            sample=get_samples(sample_dict, "short"),
         ),
     ]
 )
