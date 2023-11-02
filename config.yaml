@@ -9,6 +9,7 @@ EH_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/ExpansionHunt
 TRGT_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/trgt-v0.5.0-linux_x86_64"
 TRGT_BED: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/repeat_catalog.hg38.bed"
 SLOP_BED: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/slopped.bed"
+EH_JSON: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/variant_catalog.json"
 TRASH_PATH:
 PROCESS_SHORT: True
 PROCESS_HIFI: False
