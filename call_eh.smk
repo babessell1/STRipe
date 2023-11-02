@@ -1,16 +1,41 @@
 import os
+from py.helpers import *
 
 configfile: "config.yaml"
 from py.helpers import *
 
 sample_dict = get_sample_dict(config, init=False)
 
+rule_all = []
+
+rule_all.expand(
+    [
+        expand(
+            os.path.join(config["DATA_DIR"], "eh", "{sample}.json"),
+            sample=get_samples(config, "short"),
+        ),
+        expand(
+            os.path.join(config["DATA_DIR"], "eh", "{sample}.vcf"),
+            sample=get_samples(config, "short"),
+        ),
+        expand(
+            os.path.join(config["DATA_DIR"], "eh", "{sample}_realigned.bam"),
+            sample=get_samples(config, "short"),
+        ),
+        expand(
+            os.path.join(config["DATA_DIR"], "eh", "{sample}_largeOnly.json"),
+            sample=get_samples(config, "short"),
+        ),
+    ]
+)
+
+
 rule all:
-    input:
+    input: 
 
 
 rule call_eh:
-    input: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
+    input: os.path.join(config["DATA_DIR"], "short", "{sample}.short.cram")
     output:
         json=os.path.join(config["DATA_DIR"], "eh", "{sample}.json"),
         vcf=os.path.join(config["DATA_DIR"], "eh", "{sample}.vcf"),
