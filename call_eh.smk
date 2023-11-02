@@ -13,13 +13,12 @@ rule call_eh:
     input: os.path.join(config["DATA_DIR"], "short", "{sample}.short{ext}")
     output:
         json=os.path.join(config["DATA_DIR"], "eh", "{sample}.json"),
-        vcf=os.path.join(config["DATA_DIR"], "eh", "{sample}.vcf")
+        vcf=os.path.join(config["DATA_DIR"], "eh", "{sample}.vcf"),
         re_bam=os.path.join(config["DATA_DIR"], "eh", "{sample}_realigned.bam"),
     params:
         ref=config["REF_FASTA"],
         prefix=os.path.join(config["DATA_DIR"], "eh", "{sample}"),
         eh=config["EH"]
-    conda: "envs/sam.yaml"
     resources:
         mem_mb=16000
     threads: 16
