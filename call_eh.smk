@@ -31,7 +31,7 @@ rule_all.extend(
 
 
 rule all:
-    input: 
+    input: rule_all
 
 
 rule call_eh:
