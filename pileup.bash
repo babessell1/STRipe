@@ -6,9 +6,9 @@
 #SBATCH --nodes=1
 #SBATCH --mem=44GB
 #SBATCH --ntasks=11
-#SBATCH --time=6:00:00
-#SBATCH --output=logs/stripe_download.out
-#SBATCH --error=logs/stripe_download.err
+#SBATCH --time=7:59:00
+#SBATCH --output=logs/pileup.out
+#SBATCH --error=logs/pileup.err
 
 #eval "$(conda shell.bash hook)"
 #conda activate tricolor
