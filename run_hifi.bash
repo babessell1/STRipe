@@ -52,7 +52,7 @@ cleanup() {
 
 # Read the manifest file and process each line
 while IFS=',' read -r sample haplotype file_num datatype url; do
-    ext=$(get_ext "$sample_dict" "hifi")
+
     if [ "$datatype" != "HIFI" ]; then
         continue
     fi
