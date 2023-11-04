@@ -10,5 +10,5 @@
 #SBATCH --output=logs/hifi.out
 #SBATCH --error=logs/hifi.err
 
-
+python master_hifi.py
 
