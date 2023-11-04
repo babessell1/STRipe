@@ -21,22 +21,6 @@ manifest_file="manifests/hifi_manifest.csv"
 # Define the configuration file
 config_file="config.yaml"
 
-# Define the number of cores and memory for each Snakemake run
-declare -A resources
-resources["download.smk"]="1,1000"
-resources["index.smk"]="1,4000"
-resources["call_trgt.smk"]="1,32000"
-
-# Function to run Snakemake
-run_snakemake() {
-    snakefile="$1"
-    cores_memory=(${resources[$snakefile]})
-    cores="${cores_memory[0]}"
-    mem_mb="${cores_memory[1]}"
-    
-    snakemake -s "$snakefile" -c "$config_file" --cores "$cores" --resources "mem_mb=$mem_mb"
-}
-
 # Function to delete the temporary manifest and HIFI BAM file
 cleanup() {
     temp_manifest="$1"
@@ -62,8 +46,19 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
     echo "$sample,$haplotype,$file_num,$datatype,$url" > "$temp_manifest"
 
     # Run each Snakefile with the specified configuration
+    # Run each Snakefile with the specified configuration
     for snakefile in "${snakefiles[@]}"; do
-        run_snakemake "$snakefile"
+        case "$snakefile" in
+            "download.smk")
+                snakemake -s "$snakefile" -c "$config_file" --cores 1 --resources "mem_mb=1000"
+                ;;
+            "index.smk")
+                snakemake -s "$snakefile" -c "$config_file" --cores 1 --resources "mem_mb=4000"
+                ;;
+            "call_trgt.smk")
+                snakemake -s "$snakefile" -c "$config_file" --cores 1 --resources "mem_mb=32000"
+                ;;
+        esac
     done
 
     # Delete the temporary manifest and HIFI BAM file
