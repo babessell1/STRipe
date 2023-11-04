@@ -42,7 +42,7 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
     fi
 
     # Create a temporary manifest for the current sample
-    temp_manifest="temp_manifest.csv"
+    temp_manifest="./manifests/temp_manifest.csv"
     echo "$sample,$haplotype,$file_num,$datatype,$url" > "$temp_manifest"
 
     # Run each Snakefile with the specified configuration
