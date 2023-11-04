@@ -11,8 +11,8 @@ TRGT_BED: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/repeat_catalog.h
 SLOP_BED: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/slopped.bed"
 EH_JSON: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/variant_catalog.json"
 TRASH_PATH:
-PROCESS_SHORT: True
-PROCESS_HIFI: False
+PROCESS_SHORT: False
+PROCESS_HIFI: True
 PROCESS_ASSEMBLY: False
 
 #SNP_DIR: "/scratch/remills_root/remills99/bbessell/1kG_SNP_Panel/"

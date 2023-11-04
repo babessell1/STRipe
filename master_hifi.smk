@@ -1,4 +1,4 @@
-from snakemake import snakemake
+from snakemake import snakemake as smk
 configfile: "config.yaml"
 from py.helpers import *
 import os
@@ -28,19 +28,19 @@ rule run_all:
                     temp_handle.write(line)
 
                 # run the snakefile on the temp manifest
-                snakemake(
+                smk(
                     snakefile="download.smk",
                     configfile="config.yaml",
                     cores=1,
                     resources={"mem_mb": 1000}
                 )
-                snakemake(
+                smk(
                     snakefile="index.smk",
                     configfile="config.yaml",
                     cores=1,
                     resources={"mem_mb": 4000}
                 )
-                snakemake(
+                smk(
                     snakefile="call_trgt.smk",
                     configfile="config.yaml",
                     cores=1,
