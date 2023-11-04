@@ -7,5 +7,8 @@
 #SBATCH --mem=32GB
 #SBATCH --ntasks=11
 #SBATCH --time=6:00:00
-#SBATCH --output=logs/stripe_download.out
-#SBATCH --error=logs/stripe_download.err
+#SBATCH --output=logs/hifi.out
+#SBATCH --error=logs/hifi.err
+
+
+

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from snakemake import snakemake
+import snakemake
 from snakemake.io import expand
 from py.helpers import *
 import os
