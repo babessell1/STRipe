@@ -1,5 +1,9 @@
+#!/usr/bin/env python3
+
 from snakemake import snakemake
 from snakemake.io import expand
+from py.helpers import *
+import os
 
 # Define the Snakefiles you want to run
 snakefiles = ["download.smk", "index.smk", "call_trgt.smk"]
@@ -15,10 +19,13 @@ resources = {"download.smk": {"cores": 1, "mem_mb": 1000},
              "index.smk": {"cores": 1, "mem_mb": 4000},
              "call_trgt.smk": {"cores": 1, "mem_mb": 32000}}
 
+sample_dict = get_sample_dict(config, init=False)
+
 # Read the manifest file and process each line
 with open(manifest_file) as handle:
     for line in handle:
         sample, haplotype, file_num, datatype, url = line.strip().split(",")
+        ext=get_ext(sample_dict, "hifi")
         if datatype != "HIFI":
             continue
 
