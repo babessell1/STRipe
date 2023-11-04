@@ -1,7 +1,7 @@
 from snakemake import snakemake as smk
 configfile: "config.yaml"
 from py.helpers import *
-import os
+#import os
 
 # Import the other Snakefiles
 include: "download.smk"
