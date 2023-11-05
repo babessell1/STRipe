@@ -29,7 +29,8 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
     temp_manifest="./manifests/temp_manifest.csv"
     echo "sample_name,haplotype,file_num,datatype,long_read_url" > "$temp_manifest"
     echo "$sample,$haplotype,$file_num,$datatype,$url" >> "$temp_manifest"
-    hifi_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/hifi/${sample}.hifi.bam"
+    hifi_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/${sample}.hifi.bam"
+    trgt_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/${sample}.hifi.sorted.vcf.gz"
 
     # Run each Snakefile with the specified configuration
     snakemake -s "download.smk" -c "$config_file" --cores 1 --resources "mem_mb=1000"
