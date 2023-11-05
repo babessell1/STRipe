@@ -6,11 +6,11 @@ CHROMOSOMES: "chr21"
 SHORT_MANIFEST: "manifests/illumina_manifest.csv"
 LONG_MANIFEST: "manifests/temp_manifest.csv"
 EH_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/ExpansionHunter-v5.0.0-linux_x86_64/bin/ExpansionHunter"
-TRGT_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/trgt-v0.5.0-linux_x86_64"
+TRGT_PATH: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/trgt"
 TRGT_BED: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/repeat_catalog.hg38.bed"
 SLOP_BED: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/slopped.bed"
 EH_JSON: "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/variant_catalog.json"
-TRASH_PATH:
+TRASH_PATH: 
 PROCESS_SHORT: False
 PROCESS_HIFI: True
 PROCESS_ASSEMBLY: False
