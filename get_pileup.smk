@@ -38,4 +38,7 @@ rule get_pileup:
 rule cut_pileup:
     input: os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup")
     output: os.path.join(config["DATA_DIR"], "pileup", "{sample}.cut.pileup")
+    resources:
+        mem_mb=2000
+    threads: 1
     shell: "cut -f 1-4 {input} > {output}"
