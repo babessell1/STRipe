@@ -7,7 +7,7 @@ sample_dict = get_sample_dict(config, init=False)
 
 rule all:
     input:
-        expand(os.path.join(config["OUT_DIR"], "trgt", "{sample}.?????????????????"),
+        expand(os.path.join(config["OUT_DIR"], "trgt", "{sample}.hifi.sorted.vcf.gz"),
             zip,
             sample=get_samples(sample_dict, "hifi")
         )
