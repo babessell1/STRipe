@@ -6,7 +6,7 @@ sample_dict = get_sample_dict(config, init=False)
 
 rule_all = []
 
-rule_all.extend(
+rule_all.extend([
     expand(os.path.join(config["DATA_DIR"], "pileup", "{sample}.pileup"),
         zip,
         sample=get_samples(sample_dict, "short"),
@@ -16,7 +16,7 @@ rule_all.extend(
         zip,
         sample=get_samples(sample_dict, "short"),
         ext=get_ext(sample_dict, "short")
-    )
+    )]
 )
 
 rule all:
