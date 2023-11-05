@@ -16,7 +16,7 @@ rule_all.extend(
         zip,
         sample=get_samples(sample_dict, "short"),
         ext=get_ext(sample_dict, "short")
-    
+    )
 )
 
 rule all:
@@ -41,4 +41,7 @@ rule cut_pileup:
     resources:
         mem_mb=2000
     threads: 1
-    shell: "cut -f 1-4 {input} > {output}"
+    shell:
+        """
+        cut -f 1-4 {input} > {output}
+        """
