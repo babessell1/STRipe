@@ -13,7 +13,7 @@ rule all:
         )
 
 rule call_trgt:
-    input: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
+    input: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi.bam")
     output: os.path.join(config["OUT_DIR"], "trgt", "{sample}.hifi.sorted.vcf.gz")
     params:
         ref=config["REF_FASTA"],
