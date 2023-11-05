@@ -24,10 +24,13 @@ rule call_trgt:
     threads: 1
     shell:
         '''
+        # prefix is output without .tar.gz
+        prefix=$(echo {output} | sed 's/.vcf.gz//g')
         {params.trgt} --genome {params.ref} \
             --repeats {params.trgt_bed} \
             --reads {input} \
-            --output-prefix {output} \
+            --output-prefix $prefix \
             --threads {threads}
         '''
+
     
