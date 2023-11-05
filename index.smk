@@ -71,7 +71,15 @@ rule get_hifi_index:
     threads: 1
     shell:
         '''
-        wget -O "{output}" "{params.url}.{params.index}" || samtools index "{input}"
+        # if url is not S3 use wget
+        mkdir -p raw_data/short_reads
+        if [[ ! "{params.url}" == "https://s3"* ]]; then
+            wget -O "{output}" "{params.url}.{params.index}" || samtools index "{input}"
+        else
+            # Convert the URL to S3 format and download using AWS CLI
+            s3_key=$(echo "{params.url}" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
+            aws s3 cp "s3://human-pangenomics/${{s3_key}}.{params.index}" "{output}" || samtools index "{input}"
+        fi
         '''
 
 
