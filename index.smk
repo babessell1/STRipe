@@ -61,7 +61,7 @@ rule get_short_index:
 
 
 rule get_hifi_index:
-    input: os.path.join(config["DATA_DIR"], "hifi", "{sample}.short{ext}")
+    input: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}")
     output: os.path.join(config["DATA_DIR"], "hifi", "{sample}.hifi{ext}.{iext}")
     params:
         url=lambda wildcards: sample_dict["hifi"]["url"][wildcards.sample],
