@@ -17,7 +17,7 @@ rule call_trgt:
     output: os.path.join(config["OUT_DIR"], "trgt", "{sample}.hifi.sorted.vcf.gz")
     params:
         ref=config["REF_FASTA"],
-        trgt=config["TRGT"],
+        trgt=config["TRGT_PATH"],
         trgt_bed=config["TRGT_BED"],
     resources:
         mem_mb=32000
