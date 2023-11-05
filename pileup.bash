@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --account=bioinf593f23_class 
+#SBATCH --account=bioinf593f23_class
 #SBATCH --job-name=get_pileups
 #SBATCH --partition=standard
 #SBATCH --nodes=1

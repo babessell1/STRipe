@@ -24,10 +24,10 @@ rule call_trgt:
     threads: 1
     shell:
         '''
-        ./trgt --genome {params.ref} \
+        {params.trgt} --genome {params.ref} \
             --repeats {params.trgt_bed} \
             --reads {input} \
             --output-prefix {output} \
             --threads {threads}
         '''
-
+    
