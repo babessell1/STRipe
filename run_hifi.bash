@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #SBATCH --account=bioinf593f23_class 
-#SBATCH --job-name=stripe_download
+#SBATCH --job-name=run_trgt
 #SBATCH --partition=standard
 #SBATCH --nodes=1
 #SBATCH --mem=32GB
-#SBATCH --ntasks=11
+#SBATCH --ntasks=1
 #SBATCH --time=6:59:00
-#SBATCH --output=logs/hifi.out
-#SBATCH --error=logs/hifi.err
+#SBATCH --output=logs/trgt.out
+#SBATCH --error=logs/trgt.err
 
 #!/bin/bash
 
