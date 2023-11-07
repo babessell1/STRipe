@@ -31,6 +31,7 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
     echo "$sample,$haplotype,$file_num,$datatype,$url" >> "$temp_manifest"
     hifi_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/${sample}.hifi.bam"
     trgt_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/${sample}.hifi.sorted.vcf.gz"
+    realign_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/${sample}.hifi.sorted.spanning.bam
 
     # if trgt file does not exist, then run the pipeline
     if [ ! -f "$trgt_file" ]; then
@@ -39,8 +40,9 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
         snakemake -s "index.smk" -c "$config_file" --cores 1 --resources "mem_mb=4000"
         snakemake -s "call_trgt.smk" -c "$config_file" --cores 1 --resources "mem_mb=32000"
 
-        # Delete hifi bam file and temp_manifest
+        # Delete hifi bam file and temp_manifest and spanning relaligned bam
         rm "$hifi_bam_file"
+        rm "$realign_bam_file"
     fi
 
     rm "$temp_manifest"
