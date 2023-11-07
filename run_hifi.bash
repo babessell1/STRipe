@@ -29,7 +29,7 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
     echo "$sample,$haplotype,$file_num,$datatype,$url" >> "$temp_manifest"
     hifi_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/${sample}.hifi.bam"
     trgt_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/${sample}.hifi.sorted.vcf.gz"
-    realign_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/${sample}.hifi.sorted.spanning.bam
+    realign_bam_file="/nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/${sample}.hifi.sorted.spanning.bam"
 
     # if trgt file does not exist, then run the pipeline
     if [ ! -f "$trgt_file" ]; then
