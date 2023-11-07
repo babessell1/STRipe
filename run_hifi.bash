@@ -46,5 +46,3 @@ while IFS=',' read -r sample haplotype file_num datatype url; do
     rm "$temp_manifest"
     
 done < "$manifest_file"
-
-
