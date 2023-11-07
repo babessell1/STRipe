@@ -10,8 +10,6 @@
 #SBATCH --output=logs/trgt.out
 #SBATCH --error=logs/trgt.err
 
-#!/bin/bash
-
 # Define the Snakefiles you want to run
 snakefiles=("download.smk" "index.smk" "call_trgt.smk")
 
