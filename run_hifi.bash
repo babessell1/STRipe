@@ -18,13 +18,8 @@ MODE=$1
 # set cores to ntasks
 CORES="$SLURM_NTASKS"
 
-# Define the Snakefiles you want to run
-snakefiles=("download.smk" "index.smk" "call_trgt.smk")
-
-# Define your manifest file
 manifest_file="manifests/hifi_manifest.csv"
 
-# if mode is inline
 if [ "$MODE" == "inline" ]; then
     # Read the manifest file and process each line
     while IFS=',' read -r sample haplotype file_num datatype url; do
@@ -58,7 +53,6 @@ if [ "$MODE" == "inline" ]; then
     done < "$manifest_file"
 
 elif [ "$MODE" == "download" ]; then
-    # mem is 1000 times the number of cores
     mem=$(($CORES * 1000))
     snakemake -s "download.smk" --cores "$CORES" --resources "mem_mb=${mem}" -n -r
 elif [ "$MODE" == "index" ]; then
