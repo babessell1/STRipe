@@ -60,12 +60,12 @@ if [ "$MODE" == "inline" ]; then
 elif [ "$MODE" == "download" ]; then
     # mem is 1000 times the number of cores
     mem=$(($CORES * 1000))
-    snakemake -s "download.smk" --cores "$CORES" --resources "mem_mb=${mem}"
+    snakemake -s "download.smk" --cores "$CORES" --resources "mem_mb=${mem}" -n -r
 elif [ "$MODE" == "index" ]; then
     mem=$(($CORES * 4000))
-    snakemake -s "index.smk" --cores "$CORES" --resources "mem_mb=${mem}"
+    snakemake -s "index.smk" --cores "$CORES" --resources "mem_mb=${mem}" -n -r
 elif [ "$MODE" == "call_trgt" ]; then
     mem=$(($CORES * 32000))
-    snakemake -s "call_trgt.smk" --cores "$CORES" --resources "mem_mb=${mem}"
+    snakemake -s "call_trgt.smk" --cores "$CORES" --resources "mem_mb=${mem}" -n -r
 fi
 
