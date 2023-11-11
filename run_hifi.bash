@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --mem=32GB
 #SBATCH --ntasks=1
-#SBATCH --time=6:59:00
+#SBATCH --time=7:59:00
 #SBATCH --output=logs/trgt.out
 #SBATCH --error=logs/trgt.err
 
