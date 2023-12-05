@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=32000
+Job stats:
+job          count
+---------  -------
+all              1
+call_trgt        1
+total            2
+
+Select jobs to execute...
+
+[Fri Nov 10 18:02:35 2023]
+rule call_trgt:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG02145.hifi.bam
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02145.hifi.sorted.vcf.gz
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02145.hifi.sorted.vcf.gz
+    wildcards: sample=HG02145
+    resources: tmpdir=/tmp, mem_mb=32000, mem_mib=30518
+

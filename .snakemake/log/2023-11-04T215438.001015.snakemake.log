@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_trgt.smk, line 8:
+Missing input files for rule all:
+    affected files:
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG00621.?????????????????

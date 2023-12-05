@@ -1,0 +1,4 @@
+FileNotFoundError in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_trgt.smk, line 6:
+[Errno 2] No such file or directory: 'manifests/temp_manifest.csv'
+  File "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_trgt.smk", line 6, in <module>
+  File "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/py/helpers.py", line 65, in get_sample_dict

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule get_pileup in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/get_pileup.smk, line 26:
+Missing input files for rule get_pileup:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00438.pileup
+    wildcards: sample=HG00438
+    affected files:
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00438.short.cram

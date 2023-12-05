@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule get_pileup in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/get_pileup.smk, line 21:
+Wildcards in input files cannot be determined from output files:
+'ext'

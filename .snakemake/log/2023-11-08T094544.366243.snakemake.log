@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000
+Job stats:
+job              count
+-------------  -------
+all                  1
+download_hifi        1
+total                2
+
+Select jobs to execute...
+
+[Wed Nov  8 09:45:49 2023]
+rule download_hifi:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01928.hifi.bam
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01928.hifi.bam
+    wildcards: sample=HG01928, ext=.bam
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  8 10:01:05 2023]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Wed Nov  8 10:01:05 2023]
+localrule all:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01928.hifi.bam
+    jobid: 0
+    reason: Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01928.hifi.bam
+    resources: tmpdir=/tmp
+
+[Wed Nov  8 10:01:05 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-11-08T094544.366243.snakemake.log

@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000
+Job stats:
+job              count
+-------------  -------
+all                  1
+download_hifi        1
+total                2
+
+Select jobs to execute...
+
+[Sat Nov  4 22:50:21 2023]
+rule download_hifi:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00621.hifi.bam
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00621.hifi.bam
+    wildcards: sample=HG00621, ext=.bam
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

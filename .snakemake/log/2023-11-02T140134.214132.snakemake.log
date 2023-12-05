@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 32
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+call_eh           41
+subset_json       41
+total             83
+
+Select jobs to execute...
+
+[Thu Nov  2 14:01:36 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01978.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978_realigned.bam
+    jobid: 15
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978_realigned.bam
+    wildcards: sample=HG01978
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+RuleException in rule call_eh in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_eh.smk, line 37:
+AttributeError: 'Params' object has no attribute 'catalog_json', when formatting the following:
+
+        {params.eh} --reads {input}                 --reference {params.ref}                 --variant-catalog {params.catalog_json}                 --output-prefix {params.prefix}                 --analysis-mode streaming                 --threads {threads}
+        

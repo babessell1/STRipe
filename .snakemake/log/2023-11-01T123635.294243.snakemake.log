@@ -1,0 +1,358 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 11
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+download_short       28
+total                29
+
+Select jobs to execute...
+
+[Wed Nov  1 12:36:46 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01358.short.cram
+    jobid: 10
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01358.short.cram
+    wildcards: sample=HG01358, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02630.short.cram
+    jobid: 20
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02630.short.cram
+    wildcards: sample=HG02630, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00741.short.cram
+    jobid: 5
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00741.short.cram
+    wildcards: sample=HG00741, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02717.short.cram
+    jobid: 21
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02717.short.cram
+    wildcards: sample=HG02717, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03098.short.cram
+    jobid: 41
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03098.short.cram
+    wildcards: sample=HG03098, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01071.short.cram
+    jobid: 6
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01071.short.cram
+    wildcards: sample=HG01071, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/NA20129.short.cram
+    jobid: 36
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/NA20129.short.cram
+    wildcards: sample=NA20129, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG002.short.bam
+    jobid: 42
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG002.short.bam
+    wildcards: sample=HG002, ext=.bam
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG003.short.bam
+    jobid: 43
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG003.short.bam
+    wildcards: sample=HG003, ext=.bam
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00438.short.cram
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00438.short.cram
+    wildcards: sample=HG00438, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Wed Nov  1 12:36:48 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02818.short.cram
+    jobid: 34
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02818.short.cram
+    wildcards: sample=HG02818, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 12:58:55 2023]
+Finished job 5.
+1 of 29 steps (3%) done
+Select jobs to execute...
+
+[Wed Nov  1 12:58:56 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03486.short.cram
+    jobid: 40
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03486.short.cram
+    wildcards: sample=HG03486, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:00:05 2023]
+Finished job 6.
+2 of 29 steps (7%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:00:05 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03540.short.cram
+    jobid: 25
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03540.short.cram
+    wildcards: sample=HG03540, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:01:00 2023]
+Finished job 20.
+3 of 29 steps (10%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:01:00 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01952.short.cram
+    jobid: 14
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01952.short.cram
+    wildcards: sample=HG01952, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:01:19 2023]
+Finished job 10.
+4 of 29 steps (14%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:01:19 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00735.short.cram
+    jobid: 4
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00735.short.cram
+    wildcards: sample=HG00735, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:01:43 2023]
+Finished job 1.
+5 of 29 steps (17%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:01:43 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG004.short.bam
+    jobid: 44
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG004.short.bam
+    wildcards: sample=HG004, ext=.bam
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:01:52 2023]
+Finished job 41.
+6 of 29 steps (21%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:01:53 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01928.short.cram
+    jobid: 13
+    reason: Forced execution
+    wildcards: sample=HG01928, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:03:28 2023]
+Finished job 34.
+7 of 29 steps (24%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:03:28 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03516.short.cram
+    jobid: 24
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03516.short.cram
+    wildcards: sample=HG03516, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:04:34 2023]
+Finished job 21.
+8 of 29 steps (28%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:04:34 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01243.short.cram
+    jobid: 29
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01243.short.cram
+    wildcards: sample=HG01243, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:04:46 2023]
+Finished job 36.
+9 of 29 steps (31%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:04:46 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02622.short.cram
+    jobid: 19
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02622.short.cram
+    wildcards: sample=HG02622, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:24:59 2023]
+Finished job 25.
+10 of 29 steps (34%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:25:00 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01258.short.cram
+    jobid: 9
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01258.short.cram
+    wildcards: sample=HG01258, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:25:29 2023]
+Finished job 13.
+11 of 29 steps (38%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:25:29 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03492.short.cram
+    jobid: 39
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03492.short.cram
+    wildcards: sample=HG03492, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:26:19 2023]
+Finished job 40.
+12 of 29 steps (41%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:26:19 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03579.short.cram
+    jobid: 26
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03579.short.cram
+    wildcards: sample=HG03579, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:27:26 2023]
+Finished job 24.
+13 of 29 steps (45%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:27:26 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01361.short.cram
+    jobid: 11
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01361.short.cram
+    wildcards: sample=HG01361, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:27:44 2023]
+Finished job 14.
+14 of 29 steps (48%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:27:44 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01978.short.cram
+    jobid: 15
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01978.short.cram
+    wildcards: sample=HG01978, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:28:32 2023]
+Finished job 19.
+15 of 29 steps (52%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:28:32 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02970.short.cram
+    jobid: 35
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02970.short.cram
+    wildcards: sample=HG02970, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:30:05 2023]
+Finished job 4.
+16 of 29 steps (55%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:30:05 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02080.short.cram
+    jobid: 31
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02080.short.cram
+    wildcards: sample=HG02080, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:33:39 2023]
+Finished job 29.
+17 of 29 steps (59%) done
+Select jobs to execute...
+
+[Wed Nov  1 13:33:39 2023]
+rule download_short:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02055.short.cram
+    jobid: 30
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02055.short.cram
+    wildcards: sample=HG02055, ext=.cram
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Wed Nov  1 13:49:04 2023]
+Finished job 9.
+18 of 29 steps (62%) done
+[Wed Nov  1 13:49:19 2023]
+Finished job 39.
+19 of 29 steps (66%) done
+[Wed Nov  1 13:50:01 2023]
+Finished job 26.
+20 of 29 steps (69%) done
+[Wed Nov  1 13:50:18 2023]
+Finished job 15.
+21 of 29 steps (72%) done
+[Wed Nov  1 13:51:18 2023]
+Finished job 35.
+22 of 29 steps (76%) done
+[Wed Nov  1 13:52:05 2023]
+Finished job 11.
+23 of 29 steps (79%) done
+[Wed Nov  1 13:52:19 2023]
+Finished job 31.
+24 of 29 steps (83%) done
+[Wed Nov  1 13:52:59 2023]
+Finished job 30.
+25 of 29 steps (86%) done
+Terminating processes on user request, this might take some time.
+Cancelling snakemake on user request.

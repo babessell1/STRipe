@@ -1,0 +1,606 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 32
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+call_eh           39
+subset_json       41
+total             81
+
+Select jobs to execute...
+
+[Thu Nov  2 19:32:53 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02818.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818_realigned.bam
+    jobid: 34
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818_realigned.bam
+    wildcards: sample=HG02818
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+
+[Thu Nov  2 19:32:54 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03486.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486_realigned.bam
+    jobid: 40
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486.vcf
+    wildcards: sample=HG03486
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 20:01:38 2023]
+Finished job 34.
+1 of 81 steps (1%) done
+Select jobs to execute...
+
+[Thu Nov  2 20:01:39 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00438.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438_realigned.bam
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438.vcf
+    wildcards: sample=HG00438
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 20:12:32 2023]
+Finished job 40.
+2 of 81 steps (2%) done
+Select jobs to execute...
+
+[Thu Nov  2 20:12:32 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02717.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717_realigned.bam
+    jobid: 21
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717.vcf
+    wildcards: sample=HG02717
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 20:25:17 2023]
+Finished job 1.
+3 of 81 steps (4%) done
+Select jobs to execute...
+
+[Thu Nov  2 20:25:17 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03098.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098_realigned.bam
+    jobid: 41
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098.vcf
+    wildcards: sample=HG03098
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 20:49:56 2023]
+Finished job 41.
+4 of 81 steps (5%) done
+Select jobs to execute...
+
+[Thu Nov  2 20:49:56 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03579.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579_realigned.bam
+    jobid: 26
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579.vcf
+    wildcards: sample=HG03579
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 20:58:59 2023]
+Finished job 21.
+5 of 81 steps (6%) done
+Select jobs to execute...
+
+[Thu Nov  2 20:59:00 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01952.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952_realigned.bam
+    jobid: 14
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952.vcf
+    wildcards: sample=HG01952
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 21:12:21 2023]
+Finished job 26.
+6 of 81 steps (7%) done
+Select jobs to execute...
+
+[Thu Nov  2 21:12:22 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01243.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243_realigned.bam
+    jobid: 29
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243_realigned.bam
+    wildcards: sample=HG01243
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 21:38:36 2023]
+Finished job 29.
+7 of 81 steps (9%) done
+Select jobs to execute...
+
+[Thu Nov  2 21:38:36 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01891.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891_realigned.bam
+    jobid: 12
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891_realigned.bam
+    wildcards: sample=HG01891
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 21:45:37 2023]
+Finished job 14.
+8 of 81 steps (10%) done
+Select jobs to execute...
+
+[Thu Nov  2 21:45:37 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02145.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145_realigned.bam
+    jobid: 32
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145.vcf
+    wildcards: sample=HG02145
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 22:00:12 2023]
+Finished job 12.
+9 of 81 steps (11%) done
+Select jobs to execute...
+
+[Thu Nov  2 22:00:12 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01175.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175_realigned.bam
+    jobid: 8
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175.json
+    wildcards: sample=HG01175
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 22:22:18 2023]
+Finished job 8.
+10 of 81 steps (12%) done
+Select jobs to execute...
+
+[Thu Nov  2 22:22:18 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01109.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109_realigned.bam
+    jobid: 28
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109_realigned.bam
+    wildcards: sample=HG01109
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 22:26:46 2023]
+Finished job 32.
+11 of 81 steps (14%) done
+Select jobs to execute...
+
+[Thu Nov  2 22:26:46 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02723.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723_realigned.bam
+    jobid: 33
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723_realigned.bam
+    wildcards: sample=HG02723
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 22:43:22 2023]
+Finished job 28.
+12 of 81 steps (15%) done
+Select jobs to execute...
+
+[Thu Nov  2 22:43:22 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01928.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928_realigned.bam
+    jobid: 13
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928_realigned.bam
+    wildcards: sample=HG01928
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 23:07:11 2023]
+Finished job 13.
+13 of 81 steps (16%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:07:11 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/NA19240.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240_realigned.bam
+    jobid: 37
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240.json
+    wildcards: sample=NA19240
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 23:10:27 2023]
+Finished job 33.
+14 of 81 steps (17%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:10:27 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02572.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02572.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02572.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02572_realigned.bam
+    jobid: 18
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02572.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02572_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02572.vcf
+    wildcards: sample=HG02572
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 23:28:16 2023]
+Finished job 37.
+15 of 81 steps (19%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:28:16 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/NA18906.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906_realigned.bam
+    jobid: 38
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906.json
+    wildcards: sample=NA18906
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 23:52:00 2023]
+Finished job 38.
+16 of 81 steps (20%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145_largeOnly.json
+    jobid: 73
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02145.json
+    wildcards: sample=HG02145
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818_largeOnly.json
+    jobid: 75
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02818.json
+    wildcards: sample=HG02818
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717_largeOnly.json
+    jobid: 62
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02717.json
+    wildcards: sample=HG02717
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175_largeOnly.json
+    jobid: 49
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01175.json
+    wildcards: sample=HG01175
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486_largeOnly.json
+    jobid: 81
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03486.json
+    wildcards: sample=HG03486
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891_largeOnly.json
+    jobid: 53
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01891.json
+    wildcards: sample=HG01891
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579_largeOnly.json
+    jobid: 67
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03579.json
+    wildcards: sample=HG03579
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243_largeOnly.json
+    jobid: 70
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01243.json
+    wildcards: sample=HG01243
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952_largeOnly.json
+    jobid: 55
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01952.json
+    wildcards: sample=HG01952
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:00 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438_largeOnly.json
+    jobid: 42
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG00438.json
+    wildcards: sample=HG00438
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:01 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723_largeOnly.json
+    jobid: 74
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02723.json
+    wildcards: sample=HG02723
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:01 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109_largeOnly.json
+    jobid: 69
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01109.json
+    wildcards: sample=HG01109
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:01 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928_largeOnly.json
+    jobid: 54
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01928.json
+    wildcards: sample=HG01928
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:01 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240_largeOnly.json
+    jobid: 78
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA19240.json
+    wildcards: sample=NA19240
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:01 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098_largeOnly.json
+    jobid: 82
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG03098.json
+    wildcards: sample=HG03098
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+
+[Thu Nov  2 23:52:01 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978_largeOnly.json
+    jobid: 56
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01978_largeOnly.json
+    wildcards: sample=HG01978
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Thu Nov  2 23:52:06 2023]
+Finished job 74.
+17 of 81 steps (21%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:52:06 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01258.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01258_largeOnly.json
+    jobid: 50
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01258_largeOnly.json
+    wildcards: sample=HG01258
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Thu Nov  2 23:52:07 2023]
+Finished job 82.
+18 of 81 steps (22%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:52:07 2023]
+rule subset_json:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906.json
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906_largeOnly.json
+    jobid: 79
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906_largeOnly.json; Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA18906.json
+    wildcards: sample=NA18906
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Thu Nov  2 23:52:07 2023]
+Finished job 73.
+19 of 81 steps (23%) done
+Select jobs to execute...
+[Thu Nov  2 23:52:08 2023]
+Finished job 55.
+20 of 81 steps (25%) done
+[Thu Nov  2 23:52:08 2023]
+Finished job 53.
+21 of 81 steps (26%) done
+[Thu Nov  2 23:52:10 2023]
+Finished job 78.
+22 of 81 steps (27%) done
+[Thu Nov  2 23:52:10 2023]
+Finished job 81.
+23 of 81 steps (28%) done
+[Thu Nov  2 23:52:10 2023]
+Finished job 75.
+24 of 81 steps (30%) done
+[Thu Nov  2 23:52:10 2023]
+Finished job 70.
+25 of 81 steps (31%) done
+[Thu Nov  2 23:52:10 2023]
+Finished job 56.
+26 of 81 steps (32%) done
+[Thu Nov  2 23:52:10 2023]
+Finished job 62.
+27 of 81 steps (33%) done
+[Thu Nov  2 23:52:11 2023]
+Finished job 49.
+28 of 81 steps (35%) done
+[Thu Nov  2 23:52:11 2023]
+Finished job 67.
+29 of 81 steps (36%) done
+[Thu Nov  2 23:52:11 2023]
+Finished job 69.
+30 of 81 steps (37%) done
+[Thu Nov  2 23:52:12 2023]
+Finished job 79.
+31 of 81 steps (38%) done
+[Thu Nov  2 23:52:12 2023]
+Finished job 42.
+32 of 81 steps (40%) done
+[Thu Nov  2 23:52:12 2023]
+Finished job 54.
+33 of 81 steps (41%) done
+[Thu Nov  2 23:52:13 2023]
+Finished job 50.
+34 of 81 steps (42%) done
+
+[Thu Nov  2 23:52:13 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01071.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01071.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01071.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01071_realigned.bam
+    jobid: 6
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01071.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01071.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01071_realigned.bam
+    wildcards: sample=HG01071
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Thu Nov  2 23:54:53 2023]
+Finished job 18.
+35 of 81 steps (43%) done
+Select jobs to execute...
+
+[Thu Nov  2 23:54:53 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02080.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02080.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02080.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02080_realigned.bam
+    jobid: 31
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02080_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02080.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02080.vcf
+    wildcards: sample=HG02080
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Fri Nov  3 00:24:22 2023]
+Finished job 31.
+36 of 81 steps (44%) done
+Select jobs to execute...
+
+[Fri Nov  3 00:24:22 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01361.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01361.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01361.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01361_realigned.bam
+    jobid: 11
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01361.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01361.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG01361_realigned.bam
+    wildcards: sample=HG01361
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Fri Nov  3 00:24:32 2023]
+Finished job 6.
+37 of 81 steps (46%) done
+Select jobs to execute...
+
+[Fri Nov  3 00:24:32 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02055.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02055.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02055.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02055_realigned.bam
+    jobid: 30
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02055.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02055_realigned.bam, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02055.json
+    wildcards: sample=HG02055
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Fri Nov  3 00:48:35 2023]
+Finished job 30.
+38 of 81 steps (47%) done
+Select jobs to execute...
+
+[Fri Nov  3 00:48:35 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148_realigned.bam
+    jobid: 16
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148_realigned.bam
+    wildcards: sample=HG02148
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Fri Nov  3 01:07:39 2023]
+Finished job 11.
+39 of 81 steps (48%) done
+Select jobs to execute...
+
+[Fri Nov  3 01:07:39 2023]
+rule call_eh:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/NA20129.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA20129.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA20129.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA20129_realigned.bam
+    jobid: 36
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA20129.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA20129.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/NA20129_realigned.bam
+    wildcards: sample=NA20129
+    threads: 16
+    resources: tmpdir=/tmp, mem_mb=16000, mem_mib=15259
+
+[Fri Nov  3 01:11:08 2023]
+Error in rule call_eh:
+    jobid: 16
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148.json, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148.vcf, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148_realigned.bam
+    shell:
+        
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/ExpansionHunter-v5.0.0-linux_x86_64/bin/ExpansionHunter --reads /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram                 --reference /nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/GRCh38_full_analysis_set_plus_decoy_hla.fa                 --variant-catalog /nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/variant_catalog.json                 --output-prefix /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148                 --analysis-mode streaming                 --threads 16
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job call_eh since they might be corrupted:
+/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/eh/HG02148_realigned.bam
+[Fri Nov  3 01:28:19 2023]
+Finished job 36.
+40 of 81 steps (49%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-11-02T193250.995184.snakemake.log

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule call_trgt in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_trgt.smk, line 15:
+Missing input files for rule call_trgt:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02886.hifi.sorted.vcf.gz
+    wildcards: sample=HG02886
+    affected files:
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG02886.hifi.bam

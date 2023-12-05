@@ -1,0 +1,2 @@
+SyntaxError in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/get_pileup.smk, line 24:
+Unexpected keyword zip in rule definition (get_pileup.smk, line 24)

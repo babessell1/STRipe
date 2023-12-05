@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=32000
+Job stats:
+job          count
+---------  -------
+all              1
+call_trgt        1
+total            2
+
+Select jobs to execute...
+
+[Fri Nov 10 16:43:31 2023]
+rule call_trgt:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG02080.hifi.bam
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02080.hifi.sorted.vcf.gz
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02080.hifi.sorted.vcf.gz
+    wildcards: sample=HG02080
+    resources: tmpdir=/tmp, mem_mb=32000, mem_mib=30518
+
+[Fri Nov 10 17:48:37 2023]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Fri Nov 10 17:48:37 2023]
+localrule all:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02080.hifi.sorted.vcf.gz
+    jobid: 0
+    reason: Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG02080.hifi.sorted.vcf.gz
+    resources: tmpdir=/tmp
+
+[Fri Nov 10 17:48:37 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-11-10T164330.620181.snakemake.log

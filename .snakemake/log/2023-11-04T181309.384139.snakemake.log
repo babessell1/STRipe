@@ -1,0 +1,3 @@
+AttributeError in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/master_hifi.smk, line 2:
+'function' object has no attribute 'io'
+  File "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/master_hifi.smk", line 2, in <module>

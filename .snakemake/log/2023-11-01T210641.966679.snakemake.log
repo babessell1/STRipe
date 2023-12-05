@@ -1,0 +1,166 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 11
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+get_pileup       41
+total            42
+
+Select jobs to execute...
+
+[Wed Nov  1 21:06:43 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01978.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01978.pileup
+    jobid: 15
+    reason: Forced execution
+    wildcards: sample=HG01978
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00438.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00438.pileup
+    jobid: 1
+    reason: Forced execution
+    wildcards: sample=HG00438
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01243.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01243.pileup
+    jobid: 29
+    reason: Forced execution
+    wildcards: sample=HG01243
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01358.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01358.pileup
+    jobid: 10
+    reason: Forced execution
+    wildcards: sample=HG01358
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01952.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01952.pileup
+    jobid: 14
+    reason: Forced execution
+    wildcards: sample=HG01952
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02257.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02257.pileup
+    jobid: 17
+    reason: Forced execution
+    wildcards: sample=HG02257
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02145.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02145.pileup
+    jobid: 32
+    reason: Forced execution
+    wildcards: sample=HG02145
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01928.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01928.pileup
+    jobid: 13
+    reason: Forced execution
+    wildcards: sample=HG01928
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup
+    jobid: 16
+    reason: Forced execution
+    wildcards: sample=HG02148
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02080.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02080.pileup
+    jobid: 31
+    reason: Forced execution
+    wildcards: sample=HG02080
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Wed Nov  1 21:06:44 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02055.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02055.pileup
+    jobid: 30
+    reason: Forced execution
+    wildcards: sample=HG02055
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+[Thu Nov  2 00:05:19 2023]
+Error in rule get_pileup:
+    jobid: 16
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup
+    shell:
+        samtools mpileup -f /nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/GRCh38_full_analysis_set_plus_decoy_hla.fa -l /nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/slopped.bed /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram > /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job get_pileup since they might be corrupted:
+/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup
+[Thu Nov  2 00:29:16 2023]
+Finished job 29.
+1 of 42 steps (2%) done
+[Thu Nov  2 00:31:40 2023]
+Finished job 32.
+2 of 42 steps (5%) done
+[Thu Nov  2 00:34:28 2023]
+Finished job 14.
+3 of 42 steps (7%) done
+[Thu Nov  2 00:41:42 2023]
+Finished job 13.
+4 of 42 steps (10%) done
+[Thu Nov  2 00:44:10 2023]
+Finished job 1.
+5 of 42 steps (12%) done
+[Thu Nov  2 00:46:12 2023]
+Finished job 30.
+6 of 42 steps (14%) done
+[Thu Nov  2 00:48:25 2023]
+Finished job 17.
+7 of 42 steps (17%) done
+[Thu Nov  2 00:49:50 2023]
+Finished job 10.
+8 of 42 steps (19%) done
+[Thu Nov  2 00:55:39 2023]
+Finished job 31.
+9 of 42 steps (21%) done
+[Thu Nov  2 01:03:40 2023]
+Finished job 15.
+10 of 42 steps (24%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-11-01T210641.966679.snakemake.log

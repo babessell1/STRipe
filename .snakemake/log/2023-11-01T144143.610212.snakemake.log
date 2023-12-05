@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule get_pileup in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/get_pileup.smk, line 21:
+Missing input files for rule get_pileup:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00438.pileup
+    wildcards: sample=HG00438
+    affected files:
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/['HG00438', 'HG00621', 'HG00673', 'HG00735', 'HG00741', 'HG01071', 'HG01106', 'HG01175', 'HG01258', 'HG01358', 'HG01361', 'HG01891', 'HG01928', 'HG01952', 'HG01978', 'HG02148', 'HG02257', 'HG02572', 'HG02622', 'HG02630', 'HG02717', 'HG02886', 'HG03453', 'HG03516', 'HG03540', 'HG03579', 'HG00733', 'HG01109', 'HG01243', 'HG02055', 'HG02080', 'HG02145', 'HG02723', 'HG02818', 'HG02970', 'NA20129', 'NA19240', 'NA18906', 'HG03492', 'HG03486', 'HG03098'].short['.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram', '.cram'].bam

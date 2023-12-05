@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 11
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+get_pileup       41
+total            42
+
+Select jobs to execute...
+
+[Wed Nov  1 15:06:11 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG01978.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01978.pileup
+    jobid: 15
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01978.pileup
+    wildcards: sample=HG01978
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+RuleException in rule get_pileup in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/get_pileup.smk, line 21:
+AttributeError: 'InputFiles' object has no attribute 'bam', when formatting the following:
+samtools mpileup -f {params.ref} {input.bam} > {output}

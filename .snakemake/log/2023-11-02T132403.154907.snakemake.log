@@ -1,0 +1,3 @@
+NameError in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_eh.smk, line 37:
+name 'output' is not defined
+  File "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_eh.smk", line 37, in <module>

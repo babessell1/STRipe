@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=32000
+Job stats:
+job          count
+---------  -------
+all              1
+call_trgt        1
+total            2
+
+Select jobs to execute...
+
+[Mon Nov  6 16:04:00 2023]
+rule call_trgt:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01106.hifi.bam
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG01106.hifi.sorted.vcf.gz
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG01106.hifi.sorted.vcf.gz
+    wildcards: sample=HG01106
+    resources: tmpdir=/tmp, mem_mb=32000, mem_mib=30518
+
+Terminating processes on user request, this might take some time.
+[Mon Nov  6 16:44:41 2023]
+Error in rule call_trgt:
+    jobid: 1
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01106.hifi.bam
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG01106.hifi.sorted.vcf.gz
+    shell:
+        
+        # prefix is output without .tar.gz
+        prefix=$(echo /nfs/turbo/dcmb-class/bioinf593/groups/group_05/output/trgt/HG01106.hifi.sorted.vcf.gz | sed 's/.vcf.gz//g')
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/software/trgt --genome /nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/GRCh38_full_analysis_set_plus_decoy_hla.fa             --repeats /nfs/turbo/dcmb-class/bioinf593/groups/group_05/refs/repeat_catalog.hg38.bed             --reads /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01106.hifi.bam             --output-prefix $prefix             --threads 1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-11-06T160359.960651.snakemake.log

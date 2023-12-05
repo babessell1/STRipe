@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+get_pileup       41
+total            42
+
+Select jobs to execute...
+
+[Wed Nov  1 15:07:08 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02572.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup
+    jobid: 18
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup
+    wildcards: sample=HG02572
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+[Wed Nov  1 15:07:09 2023]
+Error in rule get_pileup:
+    jobid: 18
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02572.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup
+    shell:
+        samtools mpileup -f /refs/GRCh38_full_analysis_set_plus_decoy_hla.fa /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02572.short.cram > /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job get_pileup since they might be corrupted:
+/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-11-01T150706.883842.snakemake.log

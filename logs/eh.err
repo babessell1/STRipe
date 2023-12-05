@@ -1,0 +1,4 @@
+Unlocking working directory.
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-11-04T175417.102433.snakemake.log

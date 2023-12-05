@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule call_trgt in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/call_trgt.smk, line 15:
+Wildcards in input files cannot be determined from output files:
+'ext'

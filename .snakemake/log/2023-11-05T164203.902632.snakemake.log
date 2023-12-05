@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule get_hifi_index in file /nfs/turbo/dcmb-class/bioinf593/groups/group_05/STRipe/index.smk, line 63:
+Missing input files for rule get_hifi_index:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01071.hifi.bam.bai
+    wildcards: sample=HG01071, ext=.bam, iext=bai
+    affected files:
+        /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG01071.hifi.bam

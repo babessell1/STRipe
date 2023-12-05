@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000
+Job stats:
+job              count
+-------------  -------
+all                  1
+download_hifi        1
+total                2
+
+Select jobs to execute...
+
+[Sun Nov  5 17:25:46 2023]
+rule download_hifi:
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00735.hifi.bam
+    jobid: 1
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00735.hifi.bam
+    wildcards: sample=HG00735, ext=.bam
+    resources: tmpdir=/tmp, mem_mb=1000, mem_mib=954
+
+[Sun Nov  5 17:36:12 2023]
+Error in rule download_hifi:
+    jobid: 1
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00735.hifi.bam
+    shell:
+        
+            # if url is not S3 use wget
+            mkdir -p raw_data/short_reads
+            if [[ ! "https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/HG00735/analysis/aligned_reads/hifi/GRCh38/HG00735_aligned_GRCh38_winnowmap.sorted.bam" == "https://s3"* ]]; then
+                wget -O "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00735.hifi.bam" "https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/HG00735/analysis/aligned_reads/hifi/GRCh38/HG00735_aligned_GRCh38_winnowmap.sorted.bam"
+            else
+                # Convert the URL to S3 format and download using AWS CLI
+                s3_key=$(echo "https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=working/HPRC/HG00735/analysis/aligned_reads/hifi/GRCh38/HG00735_aligned_GRCh38_winnowmap.sorted.bam" | sed -e 's~https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=~~')
+                aws s3 cp "s3://human-pangenomics/${s3_key}" "/nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/hifi/HG00735.hifi.bam"
+            fi
+            
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-11-05T172540.746354.snakemake.log

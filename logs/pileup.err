@@ -1,0 +1,166 @@
+Unlocking working directory.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 11
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+get_pileup       10
+total            11
+
+Select jobs to execute...
+
+[Fri Nov  3 15:43:30 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG03579.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03579.pileup
+    jobid: 26
+    reason: Forced execution
+    wildcards: sample=HG03579
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00673.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00673.pileup
+    jobid: 3
+    reason: Forced execution
+    wildcards: sample=HG00673
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02572.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup
+    jobid: 18
+    reason: Forced execution
+    wildcards: sample=HG02572
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02630.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02630.pileup
+    jobid: 20
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02630.pileup
+    wildcards: sample=HG02630
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02970.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02970.pileup
+    jobid: 35
+    reason: Forced execution
+    wildcards: sample=HG02970
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00741.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00741.pileup
+    jobid: 5
+    reason: Forced execution
+    wildcards: sample=HG00741
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02148.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup
+    jobid: 16
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup
+    wildcards: sample=HG02148
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG00735.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00735.pileup
+    jobid: 4
+    reason: Forced execution
+    wildcards: sample=HG00735
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02622.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02622.pileup
+    jobid: 19
+    reason: Missing output files: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02622.pileup
+    wildcards: sample=HG02622
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+
+[Fri Nov  3 15:43:33 2023]
+rule get_pileup:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/short/HG02818.short.cram
+    output: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02818.pileup
+    jobid: 34
+    reason: Forced execution
+    wildcards: sample=HG02818
+    resources: tmpdir=/tmp, mem_mb=4000, mem_mib=3815
+
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[mpileup] 1 samples in 1 input files
+[Fri Nov  3 19:18:34 2023]
+Finished job 18.
+1 of 11 steps (9%) done
+[Fri Nov  3 19:21:43 2023]
+Finished job 4.
+2 of 11 steps (18%) done
+[Fri Nov  3 19:56:37 2023]
+Finished job 19.
+3 of 11 steps (27%) done
+[Fri Nov  3 19:59:50 2023]
+Finished job 20.
+4 of 11 steps (36%) done
+[Fri Nov  3 20:12:32 2023]
+Finished job 3.
+5 of 11 steps (45%) done
+[Fri Nov  3 20:25:56 2023]
+Finished job 35.
+6 of 11 steps (55%) done
+[Fri Nov  3 20:28:59 2023]
+Finished job 26.
+7 of 11 steps (64%) done
+[Fri Nov  3 20:33:45 2023]
+Finished job 16.
+8 of 11 steps (73%) done
+[Fri Nov  3 20:40:00 2023]
+Finished job 5.
+9 of 11 steps (82%) done
+[Fri Nov  3 20:46:33 2023]
+Finished job 34.
+10 of 11 steps (91%) done
+Select jobs to execute...
+
+[Fri Nov  3 20:46:34 2023]
+localrule all:
+    input: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00438.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00621.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00673.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00735.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00741.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01071.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01106.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01175.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01258.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01358.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01361.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01891.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01928.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01952.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01978.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02257.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02622.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02630.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02717.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02886.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03453.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03516.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03540.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03579.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00733.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01109.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG01243.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02055.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02080.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02145.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02723.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02818.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02970.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/NA20129.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/NA19240.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/NA18906.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03492.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03486.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03098.pileup
+    jobid: 0
+    reason: Input files updated by another job: /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02572.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00741.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02148.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00673.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG03579.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02970.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02818.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG00735.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02622.pileup, /nfs/turbo/dcmb-class/bioinf593/groups/group_05/raw/pileup/HG02630.pileup
+    resources: tmpdir=/tmp
+
+[Fri Nov  3 20:46:34 2023]
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: .snakemake/log/2023-11-03T154319.436298.snakemake.log
